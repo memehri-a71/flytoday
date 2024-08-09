@@ -19,8 +19,8 @@ export const CounterButtonView = ({
           className="w-6 h-6"
           color={
             quantity?.max === 1
-              ? 'black'
-              : 'red'
+              ? 'var(--gray-primary)'
+              : 'black'
           }
         />
       </button>
@@ -37,8 +37,8 @@ export const CounterButtonView = ({
           className="w-4 h-4"
           color={
             quantity?.current === quantity?.min
-              ? 'black'
-              : 'red'
+              ? 'var(--gray-primary)'
+              : 'black'
           }
         />
       </button>

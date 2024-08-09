@@ -7,17 +7,22 @@ interface QuantityType {
 }
 export const useCounterButtonViewModel = (
   quantity: QuantityType,
-  setQuantity,
+  setQuantity,onChangeHandler
 ) => {
+ 
+  
   const incrementHandler = ({ step = 1 }) => {
-    setQuantity({
+    const c={
       ...quantity,
       max: quantity.max - step,
       current:
         quantity.max - quantity.current <= quantity.max
           ? quantity.current + step
           : quantity.current,
-    })
+    }
+    onChangeHandler(c)
+    debugger
+    setQuantity(c)
   }
 
   const decrementHandler = ({ step = 1 }) => {

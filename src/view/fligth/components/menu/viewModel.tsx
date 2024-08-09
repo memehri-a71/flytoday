@@ -3,37 +3,41 @@ import React, { useState } from 'react'
 
 export const useCounterMenuViewModel = (name) => {
     const { setFieldValue } = useFormikContext()
-console.log(name);
+    const [passengersNumber, setPassengersNumber] = useState([])
 
-
-    const [quantity, setQuantity] = useState({
-        id: '',
-        max: 100,
-        min: 1,
-        current: 0,
-    })
     const passengersInfo = [{
-        id: 1,
+        id: 'adult',
         type: 'بزرگسال',
         description: 'بالای 12 سال'
     },
+    {
+        id: 'child',
+        type: 'کودک',
+        description: '2 تا 12 سال'
+    },
         //  {
-        //     id: 2,
-        //     type: 'کودک',
-        //     description: '2 تا 12 سال'
-        // }, {
-        //     id: 3,
+        //     id:'baby',
         //     type: 'نوزاد',
         //     description: 'زیر 2 سال'
         // }
     ]
+
+
+
+    const xHandler = (value) => {
+        console.log(value);
+
+        setPassengersNumber(prev => [...prev, value])
+    }
+    console.log(passengersNumber);
+
     const handlePassengerNumber = () => {
         console.log(name);
-        
-        setFieldValue(name, quantity.current)
+
+        // setFieldValue(name, quantity.current)
     }
 
     return {
-        quantity, setQuantity, passengersInfo,handlePassengerNumber
+        passengersInfo, handlePassengerNumber, xHandler
     }
 }

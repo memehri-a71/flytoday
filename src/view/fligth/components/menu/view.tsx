@@ -1,19 +1,25 @@
-import { CounterButton } from '@/components/elements/button/counterButton'
-import { CustomButton } from '@/components/elements/button/customButton'
 
-export const CounterMenuView = ({ quantity, setQuantity, passengersInfo, handlePassengerNumber }) => {
+import { CustomButton } from '@/components/elements/button/customButton'
+import { CounterBoxView } from '../counterBox/view'
+import { useState } from 'react'
+
+export const CounterMenuView = ({ passengersInfo, handlePassengerNumber ,xHandler}) => {
+
 
     return (
         <div className='absolute top-10 text-black bg-white shadow-sm rounded-lg p-4 w-72'>
-            {passengersInfo?.map(item =>
-                <div className=' flex justify-between p-2'>
-                    <div className='flex flex-col gap-1'>
-                        <p>{item.type}</p>
-                        <p className='text-xs'>{item.description}</p>
-                    </div>
-                    <CounterButton quantity={quantity} setQuantity={setQuantity} />
-                </div>
-            )}
+            <div className='flex flex-col gap-4'>
+
+                {passengersInfo?.map(item =>
+                    <CounterBoxView
+                        key={item.id}
+                        passengersInfo={item}
+                        xHandler={xHandler}
+                    // quantity={quantity}
+                    // setQuantity={setQuantity}
+                    />
+                )}
+            </div>
             <CustomButton
                 type='button'
                 variant='contained'
