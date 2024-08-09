@@ -8,7 +8,7 @@ export const CounterButtonView = ({
   decrementHandler,
 }) => {
   return (
-    <div className="flex justify-between gap-7 bg-tint-100 rounded-full px-5 py-3">
+    <div className="flex justify-between gap-4 bg-tint-100 rounded-full py-3">
       <button
         type="button"
         className="cursor-pointer"
@@ -19,12 +19,12 @@ export const CounterButtonView = ({
           className="w-6 h-6"
           color={
             quantity?.max === 1
-              ? 'var(--trueGray-400)'
-              : 'var(--primary-default)'
+              ? 'black'
+              : 'red'
           }
         />
       </button>
-      <p className="text-xl font-bold text-primary-default">
+      <p className="text-sm font-bold text-primary-default">
         {quantity?.current}
       </p>
       <button
@@ -37,8 +37,8 @@ export const CounterButtonView = ({
           className="w-4 h-4"
           color={
             quantity?.current === quantity?.min
-              ? 'var(--trueGray-400)'
-              : 'var(--primary-default)'
+              ? 'black'
+              : 'red'
           }
         />
       </button>
