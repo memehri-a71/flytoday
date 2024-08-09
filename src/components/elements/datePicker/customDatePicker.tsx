@@ -2,11 +2,13 @@
 
 import { useEffect } from 'react'
 import { default as moment } from 'jalali-moment'
-import { AdapterDateFnsJalali } from '@mui/x-date-pickers/AdapterDateFnsJalali'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { faIR } from '@mui/x-date-pickers/locales'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { HelperText } from '../helperText'
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import 'moment/locale/de';
 
 export const CustomDatePicker = (props) => {
   const {
@@ -36,24 +38,20 @@ export const CustomDatePicker = (props) => {
   }, [defaultValue, name, setFieldValue])
   return (
     <div className={className}>
-      {/* <LabelField
-        title={title}
-        className={classnametitle}
-        htmlFor={name}
-        disabled={disabled}
-      /> */}
-      <LocalizationProvider
 
-        localeText={
-          faIR.components.MuiLocalizationProvider.defaultProps.localeText
-        }
-        dateAdapter={AdapterDateFnsJalali}
+      <LocalizationProvider
+        // localeText={
+        //   faIR.components.MuiLocalizationProvider.defaultProps.localeText
+        // }
+        dateAdapter={AdapterMoment}
+        adapterLocale="de"
       >
-        {/* // TODO:what to do about it to eliminate as string */}
+      
         <DatePicker
-          defaultValue={
-            defaultValue === undefined ? convertDate : convertDate(defaultValue)
-          }
+ 
+          // defaultValue={
+          //   defaultValue === undefined ? convertDate : convertDate(defaultValue)
+          // }
           className="w-full"
           disabled={disabled}
           slotProps={{
