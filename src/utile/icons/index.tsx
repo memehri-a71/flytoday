@@ -1,5 +1,11 @@
-import { DirectionIcon } from './icon'
+import {
+    DirectionIcon,
+    PlusIcon,
+    MinusIcon
+} from './icon'
 
 export {
-    DirectionIcon
+    DirectionIcon,
+    PlusIcon,
+    MinusIcon
 }
