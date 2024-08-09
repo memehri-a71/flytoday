@@ -1,11 +1,10 @@
 interface Common {
-
-
   url?: string | undefined;
   optionLabel: string;
   placeholder?: string;
   disabled?: boolean;
   querySearch?: string
+  label?: string
 }
 
 export interface CustomAutoCompleteProps extends Partial<Common> {

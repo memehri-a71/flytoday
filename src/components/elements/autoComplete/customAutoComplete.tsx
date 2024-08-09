@@ -14,6 +14,7 @@ export const CustomAutoComplete = (props:CustomAutoCompleteProps) => {
     error,
     helperText,
     querySearch='',
+    label,
     onChange,
   } = props;
 
@@ -69,6 +70,7 @@ export const CustomAutoComplete = (props:CustomAutoCompleteProps) => {
           <TextField
             {...params}
             variant="outlined"
+            label={label}
             placeholder={placeholder}
             InputProps={{
               ...params.InputProps,
@@ -77,7 +79,7 @@ export const CustomAutoComplete = (props:CustomAutoCompleteProps) => {
                   {isLoading ? (
                     <CircularProgress color="inherit" size={20} />
                   ) : null}
-                  {params.InputProps.endAdornment}
+                  {/* {params.InputProps.endAdornment} */}
                 </>
               ),
             }}

@@ -45,6 +45,7 @@ export const CustomDatePicker = (props) => {
         // }
         dateAdapter={AdapterMoment}
         adapterLocale="de"
+        
       >
       
         <DatePicker
@@ -56,7 +57,7 @@ export const CustomDatePicker = (props) => {
           disabled={disabled}
           slotProps={{
             textField: {
-              size: 'medium',
+              size: 'small',
               error,
             },
           }}

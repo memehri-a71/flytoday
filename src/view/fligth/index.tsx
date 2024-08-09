@@ -5,7 +5,7 @@ import { Search } from './search'
 
 export const Flight = () => {
   return (
-    <div>
+    <div className='px-12'>
       <Search />
     </div>
   )

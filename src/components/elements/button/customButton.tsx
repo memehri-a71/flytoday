@@ -22,8 +22,9 @@ export const CustomButton = (props: CustomButtonType) => {
       onClick={onClick}
       disableRipple
       disabled={disabled}
+      
     >
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-2 items-center text-white">
         {children}
         {isLoading ? (
           <CircularProgress
