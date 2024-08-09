@@ -2,6 +2,7 @@ import { axiosGet } from "@/configs/httpService/httpService";
 import { CustomAutoCompleteProps } from "@/types/autoComplete";
 import { Autocomplete, CircularProgress, TextField } from "@mui/material";
 import { useState } from "react";
+import { HelperText } from "../helperText";
 
 
 export const CustomAutoComplete = (props:CustomAutoCompleteProps) => {
@@ -83,7 +84,7 @@ export const CustomAutoComplete = (props:CustomAutoCompleteProps) => {
           />
         )}
       />
-      {error ? <helperText>{helperText}</HelperText> : null}
+      {error ? <HelperText>{helperText}</HelperText> : null}
     </div>
   );
 };
