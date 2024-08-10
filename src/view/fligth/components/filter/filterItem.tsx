@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { ArrowTopIcon } from '../../../../utile/icons/icon'
 
 export const FilterItem = ({ options, title }) => {
-    console.log(options);
+
     const [showFilterBox, setShowFilterBox] = useState(true)
     return (
         <div className='flex flex-col border-b border-gray-300 py-2'>

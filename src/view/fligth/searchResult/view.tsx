@@ -1,6 +1,5 @@
 
 
-import { FlightDetailTab } from '../components/flightDetail/flightDetailTab'
 import { SearchResultHeader } from '../components/search/searchResultHeader'
 import { SearchResultItem } from '../components/search/searchResultItem'
 
@@ -15,9 +14,10 @@ export const SearchResultView = ({ data }) => {
                     flightTime={item?.timeInfo}
                     flightFeature={item?.feature}
                     totalPrice={item?.price}
+                    airlineName={item?.airlineInfo?.nameFa}
                 />
             )}
-         
+
         </div>
     )
 }

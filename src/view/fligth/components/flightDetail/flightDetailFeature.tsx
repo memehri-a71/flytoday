@@ -16,8 +16,8 @@ export const FlightDetailFeature = ({ flightFeature, flightTime }) => {
     }
 
     return (
-        <div className='flex gap-20 px-5'>
-            <div className='grid grid-cols-2 gap-x-20 gap-y-4'>
+        <div className='flex gap-16 px-5'>
+            <div className='grid grid-cols-2 gap-x-16 gap-y-2'>
                 {data?.map(item => <div className='flex gap-4'>
                     <p className='text-gray-primary'>{item?.title}</p>
                     <p>{item?.value}</p>

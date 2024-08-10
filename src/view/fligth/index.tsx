@@ -13,7 +13,7 @@ export const Flight = () => {
         <div className='col-span-3'>
           <FilterSidebar />
         </div>
-        <div className='flex flex-col col-span-9 gap-4'>
+        <div className='flex flex-col col-span-9 gap-3'>
           <SearchResult />
         </div>
       </div>

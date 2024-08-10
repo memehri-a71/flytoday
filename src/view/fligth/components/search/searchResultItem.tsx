@@ -2,21 +2,21 @@ import React, { useState } from 'react'
 import { FlightTimeBox } from './flightTimeBox'
 import { CustomButton } from '@/components/elements/button/customButton'
 import { FlightFeatureBox } from './flightFeatureBox'
-import { FlightDetailTab } from '../flightDetail/flightDetailTab'
+import { FlightDetailTab } from '../flightDetail'
+import { useNumberFormat } from '@/hooks/useNumberFormat'
 
-export const SearchResultItem = ({ flightTime, flightFeature, totalPrice }) => {
+export const SearchResultItem = ({ flightTime, flightFeature, totalPrice,airlineName }) => {
     const [showMoreDetail, setShowMoreDetail] = useState(false)
     return (
-        <>
+        <div>
             <div className='p-4 bg-white'>
                 <div className='grid grid-cols-5'>
-                    <FlightTimeBox flightTime={flightTime} />
+                    <FlightTimeBox flightTime={flightTime} airlineName={airlineName}/>
                     <div className='flex flex-col items-center border-r border-gray-300 gap-2 col-span-1 p-4'>
                         <p>یک نفر</p>
-                        <p>{totalPrice} ریال</p>
+                        <p>{useNumberFormat(totalPrice)} ریال</p>
                         <CustomButton type='button' variant='contained' isFullWidth >انتخاب بلیط</CustomButton>
                         <div>
-
                         </div>
                     </div>
                 </div>
@@ -35,8 +35,8 @@ export const SearchResultItem = ({ flightTime, flightFeature, totalPrice }) => {
                     : "opacity-0 h-1"
                     }`}
             >
-                <FlightDetailTab flightFeature={flightFeature} flightTime={flightTime} />
+                <FlightDetailTab flightFeature={flightFeature} flightTime={flightTime} airlineName={airlineName}/>
             </div>
-        </>
+        </div>
     )
 }
