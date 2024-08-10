@@ -4,8 +4,7 @@ import { FlightTime } from './flightTime';
 import { FlightDetailFeature } from './flightDetailFeature';
 
 export const FlightDetail = ({ flightFeature, flightTime }) => {
-    console.log(flightTime);
-
+ 
     return (
         <div className='h-72 p-9'>
             <FlightDetailHeader

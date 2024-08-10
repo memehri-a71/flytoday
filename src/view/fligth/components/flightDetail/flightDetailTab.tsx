@@ -8,8 +8,6 @@ export const FlightDetailTab = ({ flightFeature, flightTime }) => {
         { text: 'جزییات پرواز', icon: <MinusIcon /> },
         { text: 'قوانین و شرایط', icon: <MinusIcon /> },
     ]
-    console.log({ flightFeature, flightTime });
-
     const tabPanelItems = [
         <FlightDetail flightFeature={flightFeature} flightTime={flightTime} />,
         <div>قوانین و مقررات</div>,
@@ -19,9 +17,9 @@ export const FlightDetailTab = ({ flightFeature, flightTime }) => {
             bgPanel="bg-white"
             tabItems={tabItems}
             tabPanelItems={tabPanelItems}
-            // tabSx={{
-            //     width: '13%',
-            // }}
+        // tabSx={{
+        //     width: '13%',
+        // }}
         />
     )
 }
