@@ -9,9 +9,9 @@ import React, { useState } from 'react'
 import { CounterMenu } from '../components/menu'
 
 
-export const SearchView = ({ handleChangeDestination }) => {
+export const SearchView = ({ handleChangeDestination ,showMenu, setShowMenu}) => {
     const { values, setFieldValue } = useFormikContext()
-    const [showMenu, setShowMenu] = useState(true)
+ 
 
 
     return (
