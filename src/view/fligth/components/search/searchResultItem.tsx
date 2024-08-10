@@ -5,7 +5,7 @@ import { FlightFeatureBox } from './flightFeatureBox'
 import { FlightDetailTab } from '../flightDetail/flightDetailTab'
 
 export const SearchResultItem = ({ flightTime, flightFeature, totalPrice }) => {
-    const [showMoreDetail, setShowMoreDetail] = useState(true)
+    const [showMoreDetail, setShowMoreDetail] = useState(false)
     return (
         <>
             <div className='p-4 bg-white'>

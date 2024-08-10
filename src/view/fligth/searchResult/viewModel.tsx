@@ -1,5 +1,5 @@
 
-import SearchResult from '../../../utile/data/searchResultData.json'
+import SearchResult from '../../../utile/data/flight-data.json'
 import { useTime } from '@/hooks/useTime'
 import { useConvertTimeToPersion } from '@/hooks/useConvertTimeToPersion'
 
@@ -18,8 +18,8 @@ export const SearchResultViewModel = () => {
             cabinClassNameFa: originDestinationOptions?.cabinClassNameFa,
             seatsRemaining: originDestinationOptions?.seatsRemaining,
             flightNumber: originDestinationOptions?.operatingAirline?.flightNumber,
-            baggageFa: originDestinationOptions?.baggageFa,
-            planeType: originDestinationOptions?.operatingAirline?.equipmentName,
+            baggageFa: originDestinationOptions?.baggage,
+            planeType: originDestinationOptions?.operatingAirline?.equipmentName ||  originDestinationOptions?.operatingAirline?.equipment,
             cabinClassCode: originDestinationOptions?.cabinClassCode,
             isReturn: originDestinationOptions?.isReturn
         }
