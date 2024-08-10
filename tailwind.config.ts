@@ -12,7 +12,8 @@ const config: Config = {
       colors: {
         "blue-primary": "var(--blue-primary)",
         "orange-primary": "var(--orange-primary)",
-        "gray-primary": "var(--gray-primary)"
+        "gray-primary": "var(--gray-primary)",
+        "greyish-brown": " var(--greyish-brown)"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

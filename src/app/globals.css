@@ -2,18 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  font-family: 'iranSans';
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   direction: rtl;
-  background: #f7fafa;
+  background: #e4e4e4;
+  color:#464646 ;
 }
 
 :root {
   --blue-primary: #1773dc;
   --orange-primary: #ff7913;
-  --gray-primary: #8c8a89
+  --gray-primary: #8d8d8d;
+  --greyish-brown: #464646
+}
+
+
+
+@font-face {
+  font-family: 'iranSans';
+  src: url('/fonts/FaNum/IRANSansXFaNum-Regular.woff');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'iranSansBold';
+  src: url('/fonts/FaNum/IRANSansXFaNum-Bold.ttf');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'iranSansEnB';
+  src: url('/fonts/IRANSansX-Bold.ttf');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'iranSansEn';
+  src: url('/fonts/IRANSansX-Regular.ttf');
+  font-display: block;
 }
 
 /* :root {
