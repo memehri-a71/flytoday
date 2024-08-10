@@ -11,7 +11,7 @@ export const CustomButton = (props: CustomButtonType) => {
     onClick,
     color = "primary",
     isLoading, isFullWidth,
-    disabled
+    disabled,
   } = props;
   return (
     <Button
@@ -22,7 +22,6 @@ export const CustomButton = (props: CustomButtonType) => {
       onClick={onClick}
       disableRipple
       disabled={disabled}
-      
     >
       <div className="flex gap-2 items-center text-white">
         {children}
@@ -30,7 +29,7 @@ export const CustomButton = (props: CustomButtonType) => {
           <CircularProgress
             size="20px"
             sx={{
-              color: "white",
+              color: 'white',
             }}
           />
         ) : null}
