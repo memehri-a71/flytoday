@@ -10,6 +10,10 @@ export const theme = createTheme({
       main: '#ff7913'
     }
   },
+  typography: {
+    fontSize: 12,
+    fontFamily: 'iranSans',
+  },
 });
 export default function CustomThemeProvider({ children }: any): JSX.Element {
   return (
@@ -18,3 +22,4 @@ export default function CustomThemeProvider({ children }: any): JSX.Element {
     </ThemeProvider>
   );
 }
+
