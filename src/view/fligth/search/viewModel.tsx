@@ -1,9 +1,10 @@
 import { useFormikContext } from "formik";
+import { useState } from "react";
 import * as yup from "yup";
 
 export const useSearchViewModel = () => {
 
-
+    const [showMenu, setShowMenu] = useState(false)
     const initialValues = {
         origin: "",
         destination: "",
@@ -33,6 +34,6 @@ export const useSearchViewModel = () => {
         initialValues,
         validationSchema,
         handleChangeDestination,
-        onSubmit,
+        onSubmit,showMenu, setShowMenu
     };
 }
