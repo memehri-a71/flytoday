@@ -12,7 +12,7 @@ export const SearchBoxView = ({ handleChangeDestination ,showMenu, setShowMenu})
  
     return (
         <div className='sm:grid sm:grid-cols-6 flex flex-col gap-4 py-10'>
-            <FormikAutoComplete name='origin' label='مبدا' url='https://stage-api.sanaap.co/base/provinces_wop/' optionLabel='name' />
+            <FormikAutoComplete name='origin' label='مبدا' url='/api/airports' optionLabel='cityFa' />
             <CustomButton
                 type='button'
                 variant='contained'
@@ -21,7 +21,7 @@ export const SearchBoxView = ({ handleChangeDestination ,showMenu, setShowMenu})
             >
                 <DirectionIcon className='w-7 h-7' />
             </CustomButton>
-            <FormikAutoComplete name='destination' label='مقصد' url='https://stage-api.sanaap.co/base/provinces_wop/' optionLabel='name' />
+            <FormikAutoComplete name='destination' label='مقصد' url='/api/airports' optionLabel='cityFa' />
             <FormikDatePicker name='date' />
             <div className='relative'>
                 <CustomButton type='button' variant='outlined' color='primary' onClick={() => setShowMenu(!showMenu)} >

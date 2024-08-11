@@ -1,11 +1,12 @@
 
+import moment from "jalali-moment";
 import { useRouter } from "next/navigation";
-import {  useState } from "react";
+import { useState } from "react";
 import * as yup from "yup";
 
 export const useSearchBoxViewModel = () => {
     const [showMenu, setShowMenu] = useState(false)
-    const router=useRouter()
+    const router = useRouter()
     const initialValues = {
         origin: "j",
         destination: "k",
@@ -14,10 +15,10 @@ export const useSearchBoxViewModel = () => {
     };
     const validationSchema = yup.object({
         origin: yup
-            .string()
+            .object()
             .required("این فیلد الزامی است."),
         destination: yup
-            .string()
+            .object()
             .required("این فیلد الزامی است."),
     });
 
@@ -27,8 +28,8 @@ export const useSearchBoxViewModel = () => {
     }
 
     const onSubmit = (values) => {
-        console.log(values);
-        const url=`/flight/search?departure=${values?.origin}&arrival=${values?.destination}&departureDate=${values?.date}&adt=1&chd=2&inf=1`
+        const departureDate = moment(values.date).format('YYYY-MM-DD')
+        const url = `/flight/search?departure=${values?.origin?.iata}&arrival=${values?.destination?.iata}&departureDate=${departureDate}&adt=1&chd=2&inf=1`
         router.push(url);
     }
 

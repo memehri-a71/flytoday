@@ -6,17 +6,21 @@ import React, { useEffect, useState } from 'react'
 export const useSearchViewModel = () => {
     const searchParams = useSearchParams();
     const category = searchParams.get('type');
+    const departure =searchParams.get('departure');
+    const arrival =searchParams.get('arrival');
+    const departureDate =searchParams.get('departureDate');
+
     const [items, setItems] = useState([]);
 
-    const fetchItems = async (category) => {
-        const response = await fetch(`/api/search?type=${category}`);
+    const fetchItems = async (departure, arrival, departureDate) => {
+        const response = await fetch(`/api/search?arrival=${arrival}&departure=${departure}&departureDate=${departureDate}`);
         const data = await response.json();
         return data;
     };
 
     useEffect(() => {
         const getItems = async () => {
-            const data = await fetchItems(category);
+            const data = await fetchItems(departure, arrival, departureDate);
             const flightInfo = data?.map(item => {
                 return {
                     originDestinationOptions: item.originDestinationOptions[0]?.flightSegments[0], //[]
