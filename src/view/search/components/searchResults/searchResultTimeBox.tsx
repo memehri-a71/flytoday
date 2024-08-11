@@ -3,12 +3,14 @@ import { useFindAirport } from "@/hooks/useFindAirport"
 import { useTime } from "@/hooks/useTime"
 
 
-export const FlightTimeBox = ({ flightTime, airlineName }) => {
-  const { departureDateTime,
+export const SearchResultTimeBox = ({ flightTime, airlineName }) => {
+  const {
+    departureDateTime,
     departureAirportLocationCode,
     journeyDurationPerMinute,
     arrivalDateTime,
-    arrivalAirportLocationCode } = flightTime
+    arrivalAirportLocationCode
+  } = flightTime
 
   const arrivalAirport = useFindAirport(arrivalAirportLocationCode)
   const departureAirport = useFindAirport(departureAirportLocationCode)

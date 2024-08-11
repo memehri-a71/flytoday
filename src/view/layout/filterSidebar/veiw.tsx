@@ -1,6 +1,7 @@
+import { FilterHeader } from '@/view/layout/components/filter/filterHeader'
+import { FilterItem } from '@/view/layout/components/filter/filterItem'
 import React from 'react'
-import { FilterHeader } from '../components/filter/filterHeader'
-import { FilterItem } from '../components/filter/filterItem'
+
 
 export const FilterSidebarVeiw = ({ filterList }) => {
   return (

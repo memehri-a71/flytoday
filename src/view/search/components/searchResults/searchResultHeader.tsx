@@ -1,6 +1,6 @@
-import React from 'react'
-import { SortResult } from '../sortResult'
+
 import { CustomButton } from '@/components/elements/button/customButton'
+import { SortResult } from '@/view/fligth/components/sortResult'
 
 
 export const SearchResultHeader = () => {

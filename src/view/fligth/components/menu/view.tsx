@@ -7,7 +7,7 @@ export const CounterMenuView = ({ passengersInfo, handlePassengerNumber ,xHandle
 
 
     return (
-        <div className='absolute top-10 text-black bg-white shadow-sm rounded-lg p-4 w-72'>
+        <div className='absolute top-10 text-black bg-white shadow-lg rounded-md p-4 w-72 z-50'>
             <div className='flex flex-col gap-4'>
 
                 {passengersInfo?.map(item =>

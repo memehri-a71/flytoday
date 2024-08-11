@@ -1,10 +1,10 @@
 import { CustomRadio } from '@/components/elements/radio/customRadio'
-import React, { useState } from 'react'
 import { ArrowTopIcon } from '../../../../utile/icons/icon'
+import { useState } from 'react'
 
 export const FilterItem = ({ options, title }) => {
-
     const [showFilterBox, setShowFilterBox] = useState(true)
+
     return (
         <div className='flex flex-col border-b border-gray-300 py-2'>
             <div className='flex justify-between pb-4'>
@@ -17,7 +17,12 @@ export const FilterItem = ({ options, title }) => {
                     : "opacity-100 h-1"
                     }`}
             >
-                <CustomRadio options={options} optionValue='value' optionLable='label' wrapperClass='!flex-col !gap-2 !text-sm' />
+                <CustomRadio
+                    options={options}
+                    optionValue='value'
+                    optionLable='label'
+                    wrapperClass='!flex-col !gap-2 !text-sm'
+                />
             </div>
         </div>
     )

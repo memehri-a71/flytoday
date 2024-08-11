@@ -1,10 +1,10 @@
-import React from 'react'
+
 import { FlightDetailHeader } from './flightDetailHeader'
 import { FlightTime } from './flightTime';
 import { FlightDetailFeature } from './flightDetailFeature';
 import { useFindAirport } from '@/hooks/useFindAirport';
 
-export const FlightDetail = ({ flightFeature, flightTime,airlineName }) => {
+export const FlightDetailTab = ({ flightFeature, flightTime,airlineName }) => {
  
     return (
         <div className='h-72 py-5 px-9 text-xs'>

@@ -1,16 +1,15 @@
 
 import { MinusIcon } from '@/utile/icons'
-import React from 'react'
-import { FlightDetail } from './flightDetail'
 import { CustomTab } from '@/components/tab/customTab'
+import { FlightDetailTab } from './flightDetailTab'
 
-export const FlightDetailTab = ({ flightFeature, flightTime, airlineName }) => {
+export const FlightDetails = ({ flightFeature, flightTime, airlineName }) => {
     const tabItems = [
         { text: 'جزییات پرواز', icon: <MinusIcon /> },
         { text: 'قوانین و شرایط', icon: <MinusIcon />, disabled:true},
     ]
     const tabPanelItems = [
-        <FlightDetail flightFeature={flightFeature} flightTime={flightTime} airlineName={airlineName} />,
+        <FlightDetailTab flightFeature={flightFeature} flightTime={flightTime} airlineName={airlineName} />,
         <div>قوانین و مقررات</div>,
     ]
 

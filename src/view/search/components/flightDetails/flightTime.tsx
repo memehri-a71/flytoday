@@ -3,12 +3,10 @@ import { useFindAirport } from '@/hooks/useFindAirport'
 import { useTime } from '@/hooks/useTime'
 import { CircleIcon } from '@/utile/icons/icon'
 import moment from 'jalali-moment'
-import React from 'react'
 
 export const FlightTime = ({ airport, time }) => {
     const datafa = moment(time).locale('fa').format('DD MMMMYYYY')
     const dateEn = moment(time).format('DD MMM')
-
 
     return (
         <div className='flex relative'>
