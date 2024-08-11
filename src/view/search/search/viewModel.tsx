@@ -1,16 +1,15 @@
 import { useConvertTimeToPersion } from '@/hooks/useConvertTimeToPersion';
 import { useFindAirline } from '@/hooks/useFindAirline';
 import { useSearchParams } from 'next/navigation';
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 
 export const useSearchViewModel = () => {
-    const searchParams = useSearchParams();
-    const category = searchParams.get('type');
-    const departure =searchParams.get('departure');
-    const arrival =searchParams.get('arrival');
-    const departureDate =searchParams.get('departureDate');
-
     const [items, setItems] = useState([]);
+
+    const searchParams = useSearchParams();
+    const departure = searchParams.get('departure');
+    const arrival = searchParams.get('arrival');
+    const departureDate = searchParams.get('departureDate');
 
     const fetchItems = async (departure, arrival, departureDate) => {
         const response = await fetch(`/api/search?arrival=${arrival}&departure=${departure}&departureDate=${departureDate}`);
@@ -42,21 +41,23 @@ export const useSearchViewModel = () => {
                     isReturn: originDestinationOptions?.isReturn,
                 }
                 const timeInfo = {
-                    arrivalAirportLocationCode: originDestinationOptions?.arrivalAirportLocationCode,
-                    departureAirportLocationCode: originDestinationOptions?.departureAirportLocationCode,
                     journeyDurationPerMinute: useConvertTimeToPersion(originDestinationOptions?.journeyDurationPerMinute),
                     arrivalDateTime: originDestinationOptions?.arrivalDateTime,
                     departureDateTime: originDestinationOptions?.departureDateTime,
                 }
+                const airportsInfo = {
+                    arrivalAirportLocationCode: originDestinationOptions?.arrivalAirportLocationCode,
+                    departureAirportLocationCode: originDestinationOptions?.departureAirportLocationCode,
+                }
                 const airlineInfo = useFindAirline(airlineCode)
                 const price = airItineraryPricingInfo?.totalFare
 
-                return { feature, timeInfo, price, airlineInfo }
+                return { feature, timeInfo, price, airlineInfo ,airportsInfo}
             })
             setItems(dataFlight);
         };
         getItems();
-    }, [category]);
+    }, [departure, arrival, departureDate]);
 
     return { items }
 }

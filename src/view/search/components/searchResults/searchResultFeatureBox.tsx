@@ -2,6 +2,7 @@ import React from 'react'
 
 export const SearchResultFeatureBox = ({ flightFeature }) => {
     const { isCharter, cabinClassNameFa, seatsRemaining, flightNumber, isSystem } = flightFeature
+
     return (
         <div className='flex items-center sm:gap-5 gap-2 max-sm:text-xs max-sm:border-y max-sm:border-gray-200 py-3 w-full'>
             {isCharter

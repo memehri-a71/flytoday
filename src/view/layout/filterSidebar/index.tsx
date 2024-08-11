@@ -4,7 +4,7 @@ import { useFilterSidebarVeiwModel } from './veiwModel'
 
 export const FilterSidebar = () => {
   const { filterList } = useFilterSidebarVeiwModel()
-  return (
-    <FilterSidebarVeiw filterList={filterList} />
-  )
+  
+  return <FilterSidebarVeiw filterList={filterList} />
+  
 }

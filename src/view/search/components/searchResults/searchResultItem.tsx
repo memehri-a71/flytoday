@@ -4,12 +4,12 @@ import { SearchResultTimeBox } from "./searchResultTimeBox"
 
 
 export const SearchResultItem = (props) => {
-    const { id, flightTime, flightFeature, totalPrice, airlineName, setShowMoreDetail, showMoreDetail } = props
+    const { id, flightTime, flightFeature, totalPrice, airlineName,airportsInfo, setShowMoreDetail, showMoreDetail } = props
     return (
         <div>
             <div className='pt-4 px-4 bg-white'>
                 <div className='grid grid-cols-5'>
-                    <SearchResultTimeBox flightTime={flightTime} airlineName={airlineName} />
+                    <SearchResultTimeBox flightTime={flightTime} airportsInfo={airportsInfo} airlineName={airlineName} />
                     <div className='max-sm:hidden'>
                         <SearchResultPricetInfo text='انتخاب بلیط' isFullWidth totalPrice={totalPrice} />
                     </div>

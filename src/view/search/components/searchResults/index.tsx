@@ -6,10 +6,16 @@ import { useState } from 'react'
 
 export const SearchResults = ({ data }) => {
     const [showMoreDetail, setShowMoreDetail] = useState({})
+    console.log(data);
 
     return (
         <div className='flex flex-col gap-5'>
-            <SearchResultHeader />
+            <SearchResultHeader
+                airportsInfo={data[0]?.airportsInfo}
+                timeInfo={data[0]?.timeInfo}
+                NumberOfّlights={data?.length}
+            />
+            
             {data?.map((item, index) =>
                 <>
                     <SearchResultItem
@@ -19,6 +25,7 @@ export const SearchResults = ({ data }) => {
                         flightFeature={item?.feature}
                         totalPrice={item?.price}
                         airlineName={item?.airlineInfo?.nameFa}
+                        airportsInfo={item?.airportsInfo}
                         setShowMoreDetail={setShowMoreDetail}
                         showMoreDetail={showMoreDetail}
                     />
@@ -32,6 +39,7 @@ export const SearchResults = ({ data }) => {
                             flightFeature={item?.feature}
                             flightTime={item?.timeInfo}
                             airlineName={item?.airlineInfo?.nameFa}
+                            airportsInfo={item?.airportsInfo}
                         />
                     </div>
                 </>

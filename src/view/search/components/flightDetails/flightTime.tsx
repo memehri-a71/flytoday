@@ -1,11 +1,12 @@
 import { AirportNameAndCode } from '@/components/aitportNameAndCode'
 import { useFindAirport } from '@/hooks/useFindAirport'
+import { usePersionDate } from '@/hooks/usePersionDate'
 import { useTime } from '@/hooks/useTime'
 import { CircleIcon } from '@/utile/icons/icon'
 import moment from 'jalali-moment'
 
 export const FlightTime = ({ airport, time }) => {
-    const datafa = moment(time).locale('fa').format('DD MMMMYYYY')
+    const datafa =usePersionDate(time)
     const dateEn = moment(time).format('DD MMM')
 
     return (

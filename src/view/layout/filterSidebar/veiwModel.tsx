@@ -1,4 +1,5 @@
 import jsonData from '../../../utile/data/flight-data.json'
+
 export const useFilterSidebarVeiwModel = () => {
 
     const airlines = jsonData?.additionalData?.airlines
@@ -27,6 +28,7 @@ export const useFilterSidebarVeiwModel = () => {
             }),
         }
     ]
+
     return { filterList }
 
 }
