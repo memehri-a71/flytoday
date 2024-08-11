@@ -10,7 +10,7 @@ export const SortResult = () => {
   ]
   return (
    <div className='flex items-center gap-3'>
-       <p>مرتب‌سازی</p>
+       <p className='text-gray-primary'>مرتب‌سازی</p>
     <div className='w-44'>
       <CustomSelect options={optionSort}  />
     </div>

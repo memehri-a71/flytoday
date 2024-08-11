@@ -5,5 +5,5 @@ export const useConvertTimeToPersion = (timePerMin: number) => {
     const hour = minutes.hours()
     const minute = minutes.minutes()
 
-    return `${hour}ساعت و ${minute} دقیقه`
+    return `${hour} ساعت و ${minute} دقیقه`
 }

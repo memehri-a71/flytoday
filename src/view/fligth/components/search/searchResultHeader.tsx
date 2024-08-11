@@ -5,7 +5,7 @@ import { CustomButton } from '@/components/elements/button/customButton'
 
 export const SearchResultHeader = () => {
     return (
-        <div className='flex max-sm:flex-col justify-between'>
+        <div className='flex max-sm:flex-col justify-between items-end'>
             <div className='sm:hidden flex gap-2 py-5'>
                 <CustomButton type='button' variant='contained' isFullWidth >
                     <div className='flex items-center'>

@@ -9,7 +9,7 @@ export const SearchResultItem = ({ flightTime, flightFeature, totalPrice, airlin
     const [showMoreDetail, setShowMoreDetail] = useState(false)
     return (
         <div>
-            <div className='p-4 bg-white'>
+            <div className='pt-4 px-4 bg-white'>
                 <div className='grid grid-cols-5'>
                     <FlightTimeBox flightTime={flightTime} airlineName={airlineName} />
                     <div className='max-sm:hidden flex flex-col items-center border-r border-gray-300 gap-2 col-span-1 py-4 pr-4' >
