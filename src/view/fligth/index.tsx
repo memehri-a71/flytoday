@@ -7,13 +7,13 @@ import { FilterSidebar } from './filterSidebar'
 
 export const Flight = () => {
   return (
-    <div className='px-32'>
+    <div className='lg:px-12 md:px-8 px-4'>
       <Search />
-      <div className='grid grid-cols-12 gap-x-6'>
-        <div className='col-span-3'>
+      <div className='sm:grid sm:grid-cols-12 gap-x-6'>
+        <div className='lg:col-span-3 max-lg:hidden'>
           <FilterSidebar />
         </div>
-        <div className='flex flex-col col-span-9 gap-3'>
+        <div className='flex flex-col lg:col-span-9 col-span-12 gap-3'>
           <SearchResult />
         </div>
       </div>

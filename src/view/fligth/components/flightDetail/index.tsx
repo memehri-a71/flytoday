@@ -7,7 +7,7 @@ import { CustomTab } from '@/components/tab/customTab'
 export const FlightDetailTab = ({ flightFeature, flightTime, airlineName }) => {
     const tabItems = [
         { text: 'جزییات پرواز', icon: <MinusIcon /> },
-        { text: 'قوانین و شرایط', icon: <MinusIcon /> },
+        { text: 'قوانین و شرایط', icon: <MinusIcon />, disabled:true},
     ]
     const tabPanelItems = [
         <FlightDetail flightFeature={flightFeature} flightTime={flightTime} airlineName={airlineName} />,

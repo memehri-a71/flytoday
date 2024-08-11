@@ -14,20 +14,20 @@ export const FlightTimeBox = ({ flightTime, airlineName }) => {
   const departureAirport = useFindAirport(departureAirportLocationCode)
 
   return (
-    <div className='grid grid-cols-4 col-span-4'>
-      <div className='flex justify-center items-center col-span-1'>
+    <div className='sm:grid sm:grid-cols-4 sm:col-span-4 col-span-5 w-ull'>
+      <div className='flex sm:justify-center sm:items-center sm:col-span-1 max-sm:py-2'>
         <p>{airlineName}</p>
       </div>
-      <div className='flex justify-evenly items-center gap-4 col-span-3'>
-        <div className='flex flex-col justify-center items-center'>
-          <p>{useTime(departureDateTime)}</p>
+      <div className='grid grid-cols-3 items-center sm:col-span-3'>
+        <div className='flex flex-col justify-center items-center max-sm:ml-auto'>
+          <p className="text-2xl">{useTime(departureDateTime)}</p>
           <AirportNameAndCode AirportName={departureAirport?.countryFa} airportCode={departureAirportLocationCode} />
         </div>
         <div>
-          <p className='border-b border-gray-300 px-4 py-1'>{journeyDurationPerMinute}</p>
+          <p className='border-b border-gray-300 text-xs text-center sm:px-4 py-1'>{journeyDurationPerMinute}</p>
         </div>
-        <div className='flex flex-col justify-center items-center'>
-          <p>{useTime(arrivalDateTime)}</p>
+        <div className='flex flex-col justify-center items-center max-sm:mr-auto'>
+          <p className="text-2xl">{useTime(arrivalDateTime)}</p>
           <AirportNameAndCode AirportName={arrivalAirport?.countryFa} airportCode={arrivalAirportLocationCode} />
         </div>
       </div>
