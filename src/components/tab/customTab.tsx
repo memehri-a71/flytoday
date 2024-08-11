@@ -56,7 +56,7 @@ export const CustomTab = (props) => {
               <Tab
                 {...a11yProps(index)}
                 label={item?.text}
-                key={item?.key || item}
+                key={item?.key}
                 icon={item?.icon}
                 iconPosition={iconPosition}
                 sx={{ ...sxTab, ...tabSx }}
@@ -72,7 +72,7 @@ export const CustomTab = (props) => {
             bgPanel={bgPanel}
             value={value}
             index={index}
-            key={item?.key || item}
+            key={index}
           >
             {item}
           </CustomTabPanel>

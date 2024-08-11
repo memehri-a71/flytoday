@@ -40,7 +40,6 @@ export const SearchResultViewModel = () => {
         return { feature, timeInfo, price, airlineInfo }
     })
 
-    console.log(dataFlight);
 
 
     return {
