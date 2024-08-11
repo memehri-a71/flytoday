@@ -6,7 +6,6 @@ import { useState } from 'react'
 
 export const SearchResults = ({ data }) => {
     const [showMoreDetail, setShowMoreDetail] = useState({})
-    console.log(data);
 
     return (
         <div className='flex flex-col gap-5'>

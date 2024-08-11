@@ -3,9 +3,9 @@ import { CustomButton } from '@/components/elements/button/customButton'
 import { useFindAirport } from '@/hooks/useFindAirport'
 import { usePersionDate } from '@/hooks/usePersionDate'
 import { useWeekNameFa } from '@/hooks/useWeekNameFa'
-import { SortResult } from '@/view/fligth/components/sortResult'
+import { Sort } from '@/view/fligth/components/sort'
 
-export const SearchResultHeader = ({ airportsInfo, timeInfo ,NumberOfّlights}) => {
+export const SearchResultHeader = ({ airportsInfo, timeInfo, NumberOfّlights }) => {
     const arrivalAirport = useFindAirport(airportsInfo?.arrivalAirportLocationCode)?.countryFa
     const departureAirport = useFindAirport(airportsInfo?.departureAirportLocationCode)?.countryFa
     const day = useWeekNameFa(timeInfo?.departureDateTime)
@@ -30,7 +30,7 @@ export const SearchResultHeader = ({ airportsInfo, timeInfo ,NumberOfّlights}) 
                 <p>{NumberOfّlights} پرواز یافت شد . {day}، {dateFa}</p>
             </div>
             <div className='max-sm:hidden'>
-                <SortResult />
+                <Sort />
             </div>
         </div>
     )

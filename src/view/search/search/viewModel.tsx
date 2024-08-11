@@ -1,21 +1,34 @@
 import { useConvertTimeToPersion } from '@/hooks/useConvertTimeToPersion';
 import { useFindAirline } from '@/hooks/useFindAirline';
 import { useSearchParams } from 'next/navigation';
-import  { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const useSearchViewModel = () => {
     const [items, setItems] = useState([]);
-
     const searchParams = useSearchParams();
+
     const departure = searchParams.get('departure');
     const arrival = searchParams.get('arrival');
     const departureDate = searchParams.get('departureDate');
 
+    const sortField = searchParams.get('sortField')
+    const sortOrder = searchParams.get('sortOrder')
+
     const fetchItems = async (departure, arrival, departureDate) => {
-        const response = await fetch(`/api/search?arrival=${arrival}&departure=${departure}&departureDate=${departureDate}`);
+        const response = await fetch(`/api/search?${searchParams}`);
         const data = await response.json();
         return data;
     };
+
+    const sortData = (data, sortField, sortOrder = 'asc') => {
+        const t = data.sort((p1, p2) => {
+            if (p1[sortField] < p2[sortField]) return 1;
+            if (p1[sortField] > p2[sortField]) return -1;
+            return 0;
+        });
+        return sortOrder == 'asc' ? t.reverse() : t
+    }
+
 
     useEffect(() => {
         const getItems = async () => {
@@ -51,13 +64,18 @@ export const useSearchViewModel = () => {
                 }
                 const airlineInfo = useFindAirline(airlineCode)
                 const price = airItineraryPricingInfo?.totalFare
+                const time = originDestinationOptions?.departureDateTime
 
-                return { feature, timeInfo, price, airlineInfo ,airportsInfo}
+                return { feature, timeInfo, price, airlineInfo, airportsInfo, time }
             })
+            if (sortField && sortOrder) {
+                const sortedData = sortData(dataFlight, sortField, sortOrder)
+                setItems(sortedData);
+            }
             setItems(dataFlight);
         };
         getItems();
-    }, [departure, arrival, departureDate]);
+    }, [departure, arrival, departureDate, sortField, sortOrder]);
 
-    return { items }
+    return { items, fetchItems }
 }
