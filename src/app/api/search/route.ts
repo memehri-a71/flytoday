@@ -8,8 +8,9 @@ export async function GET(request) {
     const departure = url.searchParams.get('departure');
     const arrival = url.searchParams.get('arrival');
     const departureDate = url.searchParams.get('departureDate');
-
-    console.log('departure', departure);
+    const flightType = url.searchParams.get('flightType');
+    const fligthClass = url.searchParams.get('fligthClass');
+    const airlines = url.searchParams.get('airlines');
 
     let filteredItems = allItems;
 
@@ -19,6 +20,24 @@ export async function GET(request) {
             item?.originDestinationOptions[0]?.flightSegments[0]?.arrivalAirportLocationCode === arrival &&
             item?.originDestinationOptions[0]?.flightSegments[0]?.departureAirportLocationCode === departure
         );
+    }
+
+    if (flightType) {
+        filteredItems = filteredItems.filter(item => {
+            if (flightType == 'system') {
+                return item?.isSystem == true
+            }
+            if (flightType == 'charter') {
+                return item?.isCharter == true
+            }
+            return item
+        })
+    }
+
+    if (airlines) {
+        filteredItems = filteredItems.filter(item => 
+          item?.validatingAirlineCode===airlines
+        )
     }
 
     return new Response(JSON.stringify(filteredItems), {

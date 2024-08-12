@@ -26,7 +26,6 @@ export const useSortVeiwModel = () => {
     setSelectedValue(event.target.value);
     const sortType = JSON.parse(event.target.value)
     handleSort(sortType.sortField, sortType.sortOrder)
-
   };
   return {
     optionSort,

@@ -3,8 +3,8 @@ import { FilterSidebarVeiw } from './veiw'
 import { useFilterSidebarVeiwModel } from './veiwModel'
 
 export const FilterSidebar = () => {
-  const { filterList } = useFilterSidebarVeiwModel()
-  
-  return <FilterSidebarVeiw filterList={filterList} />
-  
+  const { filterList, handleChange } = useFilterSidebarVeiwModel()
+
+  return <FilterSidebarVeiw filterList={filterList} handleChange={handleChange} />
+
 }

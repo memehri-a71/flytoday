@@ -1,29 +1,21 @@
-import React, { useState } from 'react';
-import { Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
-export const CustomSelect = ({ options,size='small' }) => {
-  const [selectedValue, setSelectedValue] = useState('');
-
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
+export const CustomSelect = ({ value, handleChange, options }) => {
 
   return (
-    <FormControl variant="outlined" fullWidth>
-      {/* <InputLabel id="select-label">{label}</InputLabel> */}
+    <FormControl fullWidth>
       <Select
-        labelId="select-label"
-        value={selectedValue}
-        defaultValue={options[0]}
-        onChange={handleChange}
-        sx={{ bgcolor: 'white' }}
-        size={size}
+        value={value}
+        onChange={(e) => handleChange(e)}
       >
-        {options.map((option, index) => (
-          <MenuItem key={index} value={option?.value}>
-            {option?.label}
-          </MenuItem>
-        ))}
+        {options.map(item =>
+          <MenuItem
+            key={item.value}
+            value={JSON.stringify(item)}
+          >
+            {item.label}
+          </MenuItem>)}
+
       </Select>
     </FormControl>
   );

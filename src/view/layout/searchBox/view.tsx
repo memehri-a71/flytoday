@@ -32,7 +32,7 @@ export const SearchBoxView = ({ handleChangeDestination ,showMenu, setShowMenu})
                     : null}
             </div>
 
-            <CustomButton type='submit' variant='contained' color='secondary' onClick={() => console.log('hi')}>
+            <CustomButton type='submit' variant='contained' color='secondary' >
                 جستجو
             </CustomButton>
         </div >

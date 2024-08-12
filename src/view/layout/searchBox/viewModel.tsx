@@ -29,7 +29,7 @@ export const useSearchBoxViewModel = () => {
 
     const onSubmit = (values) => {
         const departureDate = moment(values.date).format('YYYY-MM-DD')
-        const url = `/flight/search?departure=${values?.origin?.iata}&arrival=${values?.destination?.iata}&departureDate=${departureDate}&adt=1&chd=2&inf=1`
+        const url = `/flight/search?departure=${values?.origin?.iata}&arrival=${values?.destination?.iata}&departureDate=${departureDate}`
         router.push(url);
     }
 
@@ -38,6 +38,8 @@ export const useSearchBoxViewModel = () => {
         initialValues,
         validationSchema,
         handleChangeDestination,
-        onSubmit, showMenu, setShowMenu
+        onSubmit, 
+        showMenu, 
+        setShowMenu
     };
 }

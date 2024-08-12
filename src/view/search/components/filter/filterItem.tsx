@@ -2,13 +2,14 @@ import { CustomRadio } from '@/components/elements/radio/customRadio'
 import { ArrowTopIcon } from '../../../../utile/icons/icon'
 import { useState } from 'react'
 
-export const FilterItem = ({ options, title }) => {
+
+export const FilterItem = ({ options, title,handleChange }) => {
     const [showFilterBox, setShowFilterBox] = useState(true)
 
     return (
         <div className='flex flex-col border-b border-gray-300 py-2'>
             <div className='flex justify-between pb-4'>
-                <p className='font-bold text-sm'>{title}</p>
+                <p className='font-bold text-sm'>{title.label}</p>
                 <ArrowTopIcon
                     className='w-4 h-4 cursor-pointer'
                     onClick={() => setShowFilterBox(!showFilterBox)}
@@ -25,6 +26,8 @@ export const FilterItem = ({ options, title }) => {
                     optionValue='value'
                     optionLable='label'
                     wrapperClass='!flex-col !gap-2 !text-sm'
+                    onChange={(e) => handleChange(e,title.value)
+                    }
                 />
             </div>
         </div>

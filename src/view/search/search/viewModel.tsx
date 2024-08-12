@@ -10,7 +10,6 @@ export const useSearchViewModel = () => {
     const departure = searchParams.get('departure');
     const arrival = searchParams.get('arrival');
     const departureDate = searchParams.get('departureDate');
-
     const sortField = searchParams.get('sortField')
     const sortOrder = searchParams.get('sortOrder')
 
@@ -28,7 +27,6 @@ export const useSearchViewModel = () => {
         });
         return sortOrder == 'asc' ? t.reverse() : t
     }
-
 
     useEffect(() => {
         const getItems = async () => {
@@ -75,7 +73,7 @@ export const useSearchViewModel = () => {
             setItems(dataFlight);
         };
         getItems();
-    }, [departure, arrival, departureDate, sortField, sortOrder]);
+    }, [searchParams]);
 
     return { items, fetchItems }
 }

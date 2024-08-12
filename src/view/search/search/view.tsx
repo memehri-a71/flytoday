@@ -1,7 +1,7 @@
 import React from 'react'
 import { SearchBox } from '../../layout/searchBox'
 import { SearchResults } from '../components/searchResults'
-import { FilterSidebar } from '@/view/layout/filterSidebar'
+import { FilterSidebar } from '@/view/search/filterSidebar'
 
 
 export const SearchView = ({ searchResultList }) => {
