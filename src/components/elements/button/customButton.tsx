@@ -1,7 +1,5 @@
 import { CustomButtonType } from "@/types/button";
 import { Button, CircularProgress } from "@mui/material";
-import { ReactNode } from "react";
-
 
 export const CustomButton = (props: CustomButtonType) => {
   const {

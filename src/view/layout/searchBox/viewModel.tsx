@@ -8,10 +8,28 @@ export const useSearchBoxViewModel = () => {
     const [showMenu, setShowMenu] = useState(false)
     const router = useRouter()
     const initialValues = {
-        origin: "j",
-        destination: "k",
+        origin: "",
+        destination: "",
         date: "",
-        passengers: ''
+        passengers: [{
+            id: 'adult',
+            type: 'بزرگسال',
+            description: 'بالای 12 سال',
+            count: 1
+        },
+        {
+            id: 'child',
+            type: 'کودک',
+            description: '2 تا 12 سال',
+            count: 0
+        },
+        {
+            id: 'baby',
+            type: 'نوزاد',
+            description: 'زیر 2 سال',
+            count: 0
+        }
+        ]
     };
     const validationSchema = yup.object({
         origin: yup
@@ -38,8 +56,8 @@ export const useSearchBoxViewModel = () => {
         initialValues,
         validationSchema,
         handleChangeDestination,
-        onSubmit, 
-        showMenu, 
+        onSubmit,
+        showMenu,
         setShowMenu
     };
 }

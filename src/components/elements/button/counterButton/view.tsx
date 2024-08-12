@@ -3,7 +3,7 @@ import React from 'react'
 
 
 export const CounterButtonView = ({
-  quantity,
+  value,
   incrementHandler,
   decrementHandler,
 }) => {
@@ -12,31 +12,37 @@ export const CounterButtonView = ({
       <button
         type="button"
         className="cursor-pointer"
-        disabled={quantity?.max === 1}
-        onClick={incrementHandler}
+        // disabled={value === 1}
+        onClick={(e) => {
+          e.stopPropagation()
+          incrementHandler()
+        }}
       >
         <PlusIcon
           className="w-6 h-6"
           color={
-            quantity?.max === 1
+            value === 1
               ? 'var(--gray-primary)'
               : 'black'
           }
         />
       </button>
       <p className="text-sm font-bold text-primary-default">
-        {quantity?.current}
+        {value}
       </p>
       <button
         type="button"
         className="cursor-pointer"
-        disabled={quantity?.current === quantity?.min}
-        onClick={decrementHandler}
+        // disabled={value === value}
+        onClick={(e) => {
+          e.stopPropagation()
+          decrementHandler()
+        }}
       >
         <MinusIcon
           className="w-4 h-4"
           color={
-            quantity?.current === quantity?.min
+            value === value
               ? 'var(--gray-primary)'
               : 'black'
           }

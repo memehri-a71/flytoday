@@ -1,6 +1,6 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
-export const CustomSelect = ({ value, handleChange, options }) => {
+export const CustomSelect = ({ value, handleChange, options, children }) => {
 
   return (
     <FormControl fullWidth>
@@ -9,13 +9,13 @@ export const CustomSelect = ({ value, handleChange, options }) => {
         size="small"
         onChange={(e) => handleChange(e)}
       >
-        {options.map(item =>
+        {options ? options.map(item =>
           <MenuItem
             key={item.value}
             value={JSON.stringify(item)}
           >
             {item.label}
-          </MenuItem>)}
+          </MenuItem>) : children}
 
       </Select>
     </FormControl>
