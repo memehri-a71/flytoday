@@ -1,8 +1,16 @@
-import { CounterButton } from '@/components/elements/button/counterButton'
-import { CounterButtonView } from '@/components/elements/button/counterButton/view'
-import { useState } from 'react'
 
-export const CounterBoxView = (props) => {
+import { CounterButtonView } from '@/components/elements/button/counterButton/view'
+
+interface Props{
+     passengersInfo:{
+            type:string,
+            description:string,
+        }
+        value:any
+        incrementHandler:()=>void
+        decrementHandler:()=>void
+}
+export const CounterBoxView = (props:Props) => {
     const {
         passengersInfo,
         value,

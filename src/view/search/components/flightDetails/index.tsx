@@ -2,20 +2,28 @@
 import { MinusIcon } from '@/utile/icons'
 import { CustomTab } from '@/components/tab/customTab'
 import { FlightDetailTab } from './flightDetailTab'
+import { AirportsInfoType, FeatureType, TimeInfoType } from '@/types/common'
 
-export const FlightDetails = ({ flightFeature, flightTime, airlineName, airportsInfo }) => {
+interface Props{
+     flightFeature:FeatureType
+      flightTime:TimeInfoType
+      airlineName:string
+      airportsInfo:AirportsInfoType
+}
+export const FlightDetails = ({ flightFeature, flightTime, airlineName, airportsInfo }:Props) => {
     const tabItems = [
         { text: 'جزییات پرواز', icon: <MinusIcon /> },
         { text: 'قوانین و شرایط', icon: <MinusIcon />, disabled: true },
     ]
     const tabPanelItems = [
         <FlightDetailTab
+            key={1}
             flightFeature={flightFeature}
             flightTime={flightTime}
             airportsInfo={airportsInfo}
             airlineName={airlineName}
         />,
-        <div>قوانین و مقررات</div>,
+        <div key={2}>قوانین و مقررات</div>,
     ]
 
     return (

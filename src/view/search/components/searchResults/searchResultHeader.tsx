@@ -3,9 +3,16 @@ import { CustomButton } from '@/components/elements/button/customButton'
 import { useFindAirport } from '@/hooks/useFindAirport'
 import { usePersionDate } from '@/hooks/usePersionDate'
 import { useWeekNameFa } from '@/hooks/useWeekNameFa'
+import { AirportsInfoType, TimeInfoType } from '@/types/common'
 import { Sort } from '@/view/search/sort'
 
-export const SearchResultHeader = ({ airportsInfo, timeInfo, NumberOfّlights }) => {
+interface Props{ 
+    airportsInfo:AirportsInfoType
+     timeInfo:TimeInfoType
+     NumberOfّlights:number
+     }
+
+export const SearchResultHeader = ({ airportsInfo, timeInfo, NumberOfّlights }:Props) => {
     const arrivalAirport = useFindAirport(airportsInfo?.arrivalAirportLocationCode)?.countryFa
     const departureAirport = useFindAirport(airportsInfo?.departureAirportLocationCode)?.countryFa
     const day = useWeekNameFa(timeInfo?.departureDateTime)

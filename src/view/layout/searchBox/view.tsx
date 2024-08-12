@@ -5,7 +5,10 @@ import { DirectionIcon } from '@/utile/icons'
 import { PassengerMenu } from '@/view/fligth/components/menu/passengerMenu'
 import { useFormikContext } from 'formik'
 
-export const SearchBoxView = ({ handleChangeDestination }) => {
+interface Props{
+    handleChangeDestination:({ values, setFieldValue }:any)=>void
+}
+export const SearchBoxView = ({ handleChangeDestination }:Props) => {
     const { values, setFieldValue } = useFormikContext()
 
     return (

@@ -6,9 +6,9 @@ export const FilterHeader = () => {
     const searchParams = useSearchParams();
     const router = useRouter();
     const { filterList } = useFilterSidebarVeiwModel()
-    const filterQuery = filterList.map(item => item.title.value)
+    const filterQuery = filterList.map((item:Record<string,any>) => item.title.value)
 
-    const removeFilter = (filtersName) => {
+    const removeFilter = (filtersName:string[]) => {
         const newFilters = { ...Object.fromEntries(searchParams.entries()) };
         filtersName?.map(item => delete newFilters[item])
         router.push(`?${new URLSearchParams(newFilters).toString()}`);

@@ -1,11 +1,18 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 
-export const useSortVeiwModel = () => {
+interface returnFunc{
+    optionSort:Record<string,any>[]
+    handleChange:(e:any)=>void
+    selectedValue:string
+    setSelectedValue:Dispatch<SetStateAction<string>>
+  }
+
+export const useSortVeiwModel = ():returnFunc => {
   const [selectedValue, setSelectedValue] = useState('');
-  const router = useRouter()
   const searchParams = useSearchParams();
+  const router = useRouter()
 
   const optionSort = [
     { value: "priceMax", label: "گرانترین", sortField: 'price', sortOrder: 'desc' },
@@ -14,7 +21,7 @@ export const useSortVeiwModel = () => {
     { value: "timeLAter", label: "دیرترین", sortField: 'time', sortOrder: 'desc' }
   ]
 
-  const handleSort = (sortField, sortOrder) => {
+  const handleSort = (sortField:string, sortOrder:string) => {
     const params = new URLSearchParams(searchParams);
     params.set('sortField', sortField);
     params.set('sortOrder', sortOrder);
@@ -22,11 +29,12 @@ export const useSortVeiwModel = () => {
 
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event:any) => {
     setSelectedValue(event.target.value);
     const sortType = JSON.parse(event.target.value)
     handleSort(sortType.sortField, sortType.sortOrder)
   };
+
   return {
     optionSort,
     handleChange,

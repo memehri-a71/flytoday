@@ -2,8 +2,13 @@ import { CustomRadio } from '@/components/elements/radio/customRadio'
 import { ArrowTopIcon } from '../../../../utile/icons/icon'
 import { useState } from 'react'
 
+interface Props{
+    options:Record<string,any>[]
+     title:Record<string,any>
+     handleChange:(e:any,title:string)=>void
+}
 
-export const FilterItem = ({ options, title,handleChange }) => {
+export const FilterItem = ({ options, title,handleChange }:Props) => {
     const [showFilterBox, setShowFilterBox] = useState(true)
 
     return (
@@ -26,9 +31,8 @@ export const FilterItem = ({ options, title,handleChange }) => {
                     optionValue='value'
                     optionLable='label'
                     wrapperClass='!flex-col !gap-2 !text-sm'
-                    onChange={(e) => handleChange(e,title.value)
-                    }
-                />
+                    onChange={(e) => handleChange(e, title.value)}              
+                      />
             </div>
         </div>
     )

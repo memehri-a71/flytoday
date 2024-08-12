@@ -1,7 +1,8 @@
 import moment from 'jalali-moment';
 import jsonData from '../../../utile/data/flight-data.json'
+import { NextRequest } from 'next/server';
 
-export async function GET(request) {
+export async function GET(request:Request | NextRequest) {
     const url = new URL(request.url);
     const allItems = jsonData.pricedItineraries
 

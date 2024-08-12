@@ -4,7 +4,13 @@ import { FlightTime } from './flightTime';
 import { FlightDetailFeature } from './flightDetailFeature';
 import { useFindAirport } from '@/hooks/useFindAirport';
 
-export const FlightDetailTab = ({ flightFeature, flightTime, airlineName, airportsInfo }) => {
+interface Props{ 
+    flightFeature:Record<string,any>
+     flightTime:Record<string,any>
+     airlineName:string
+     airportsInfo:Record<string,any>
+     }
+export const FlightDetailTab = ({ flightFeature, flightTime, airlineName, airportsInfo }:Props) => {
 
     return (
         <div className='h-fit py-5 sm:px-9 px-4 text-xs'>

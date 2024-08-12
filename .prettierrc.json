@@ -56,6 +56,6 @@
   ],
   "importOrderSeparation": false,
   "importOrderSortSpecifiers": true,
-  "importOrderCaseInsensitive": true,
-  "plugins": ["@trivago/prettier-plugin-sort-imports"]
+  "importOrderCaseInsensitive": true
 }
+// "plugins": ["@trivago/prettier-plugin-sort-imports"]

@@ -1,5 +1,6 @@
+import { TabPanelPropsType } from "@/types/tab"
 
-export const CustomTabPanel = (props) => {
+export const CustomTabPanel = (props:TabPanelPropsType) => {
   const { children, value, index, bgPanel, ...other } = props
 
   return (

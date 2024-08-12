@@ -1,7 +1,12 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import jsonData from '../../../utile/data/flight-data.json'
 
-export const useFilterSidebarVeiwModel = () => {
+ interface ReturnFunc{ 
+    filterList:Record<string,any>
+    handleChange: (e:any,title:string)=>void
+    }
+
+export const useFilterSidebarVeiwModel = ():ReturnFunc => {
     const router = useRouter()
     const searchParams = useSearchParams();
 
@@ -32,13 +37,13 @@ export const useFilterSidebarVeiwModel = () => {
         }
     ]
 
-    const handleFilter = (sortField, filterType) => {
+    const handleFilter = (sortField:string, filterType:string) => {
         const params = new URLSearchParams(searchParams);
         params.set(`${sortField}`, filterType);
         router.push(`?${params.toString()}`);
     };
 
-    const handleChange = (event, title) => {
+    const handleChange = (event:any, title:string) => {
         const newValue = event.target.value
         handleFilter(title, newValue)
     };

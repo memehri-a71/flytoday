@@ -1,9 +1,14 @@
 import { AirportNameAndCode } from "@/components/aitportNameAndCode"
 import { useFindAirport } from "@/hooks/useFindAirport"
 import { useTime } from "@/hooks/useTime"
+import { AirportsInfoType,TimeInfoType } from "@/types/common"
 
-
-export const SearchResultTimeBox = ({ flightTime, airlineName, airportsInfo }) => {
+interface Props{ 
+  flightTime:TimeInfoType
+   airlineName:string
+   airportsInfo:AirportsInfoType
+}
+export const SearchResultTimeBox = ({ flightTime, airlineName, airportsInfo }:Props) => {
   const {
     departureDateTime,
     journeyDurationPerMinute,

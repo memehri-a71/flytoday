@@ -1,5 +1,9 @@
 
-export const FlightDetailFeature = ({ flightFeature, flightTime }) => {
+interface Props{
+    flightFeature:Record<string,any>
+     flightTime:Record<string,any>
+}
+export const FlightDetailFeature = ({ flightFeature, flightTime }:Props) => {
     const data = [
         { title: 'مدت زمان پرواز', value: flightTime?.journeyDurationPerMinute },
         { title: 'نوع پرواز', value: 'سیستمی' },

@@ -1,11 +1,14 @@
 
+'use client'
 import { FlightDetails } from '../flightDetails'
 import { SearchResultHeader } from './searchResultHeader'
 import { SearchResultItem } from './searchResultItem'
 import { useState } from 'react'
 
-export const SearchResults = ({ data }) => {
-    const [showMoreDetail, setShowMoreDetail] = useState({})
+
+
+export const SearchResults = ({ data }:any) => {
+    const [showMoreDetail, setShowMoreDetail] = useState<Record<string,boolean>>({})
 
     return (
         <div className='flex flex-col gap-5'>
@@ -15,7 +18,7 @@ export const SearchResults = ({ data }) => {
                 NumberOfّlights={data?.length}
             />
             
-            {data?.map((item, index) =>
+            {data?.map((item:any, index:number) =>
                 <>
                     <SearchResultItem
                         key={index}
