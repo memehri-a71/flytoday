@@ -4,7 +4,7 @@ import { SearchResultTimeBox } from "./searchResultTimeBox"
 
 
 export const SearchResultItem = (props) => {
-    const { id, flightTime, flightFeature, totalPrice, airlineName,airportsInfo, setShowMoreDetail, showMoreDetail } = props
+    const { id, flightTime, flightFeature, totalPrice, airlineName, airportsInfo, setShowMoreDetail, showMoreDetail } = props
     return (
         <div>
             <div className='pt-4 px-4 bg-white'>
@@ -26,7 +26,11 @@ export const SearchResultItem = (props) => {
                     </div>
                 </div>
                 <div className='sm:hidden'>
-                    <SearchResultPricetInfo text='جزئیات و انتخاب' totalPrice={totalPrice} />
+                    <SearchResultPricetInfo
+                        text='جزئیات و انتخاب'
+                        totalPrice={totalPrice}
+                        onClick={() => setShowMoreDetail({ ...showMoreDetail, [id]: !showMoreDetail[id] })}
+                    />
                 </div>
             </div>
         </div >
