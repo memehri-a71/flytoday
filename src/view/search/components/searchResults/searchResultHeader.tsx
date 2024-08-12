@@ -15,8 +15,8 @@ export const SearchResultHeader = ({ airportsInfo, timeInfo, NumberOfّlights }:
     const dateFa = usePersionDate(timeInfo?.departureDateTime)
 
     return (
-        <div className='flex max-sm:flex-col justify-between items-end'>
-            <div className='sm:hidden flex gap-2 py-5'>
+        <div className='flex max-sm:flex-col sm:justify-between sm:items-end'>
+            <div className='sm:hidden flex gap-2 w-full py-5'>
                 <CustomButton type='button' variant='contained' isFullWidth >
                     <div className='flex items-center'>
                         <p>فیلتر کردن</p>
