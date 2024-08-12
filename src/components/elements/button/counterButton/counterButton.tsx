@@ -1,22 +1,21 @@
 import { MinusIcon, PlusIcon } from '@/utile/icons'
-import React from 'react'
 
-interface Props{
-    value:any
-  incrementHandler:()=>void
-  decrementHandler:()=>void
+interface Props {
+  value: any
+  incrementHandler: () => void
+  decrementHandler: () => void
 }
-export const CounterButtonView = ({
+export const CounterButton = ({
   value,
   incrementHandler,
   decrementHandler,
-}:Props) => {
+}: Props) => {
+
   return (
     <div className="flex justify-between gap-4 bg-tint-100 rounded-full py-3">
       <button
         type="button"
         className="cursor-pointer"
-        // disabled={value === 1}
         onClick={(e) => {
           e.stopPropagation()
           incrementHandler()
@@ -24,11 +23,7 @@ export const CounterButtonView = ({
       >
         <PlusIcon
           className="w-6 h-6"
-          color={
-            value === 1
-              ? 'var(--gray-primary)'
-              : 'black'
-          }
+          color='black'
         />
       </button>
       <p className="text-sm font-bold text-primary-default">
@@ -37,7 +32,7 @@ export const CounterButtonView = ({
       <button
         type="button"
         className="cursor-pointer"
-        // disabled={value === value}
+        disabled={value === 0}
         onClick={(e) => {
           e.stopPropagation()
           decrementHandler()
@@ -46,7 +41,7 @@ export const CounterButtonView = ({
         <MinusIcon
           className="w-4 h-4"
           color={
-            value === value
+            value === 0
               ? 'var(--gray-primary)'
               : 'black'
           }

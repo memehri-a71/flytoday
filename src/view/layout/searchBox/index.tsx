@@ -1,7 +1,8 @@
 import { FormikWrapper, SearchBoxView, useSearchBoxViewModel } from "../imports"
 
 export const SearchBox = () => {
-    const { initialValues,
+    const { 
+        initialValues,
         validationSchema,
         onSubmit,
         handleChangeDestination } = useSearchBoxViewModel()

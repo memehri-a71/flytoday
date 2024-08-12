@@ -21,7 +21,10 @@ export const FormikSelect= (props:FormikSelectType) => {
             form.setFieldValue(props.name, value)
             props.onChangeHandler && props?.onChangeHandler?.(value)
           } }
-          onBlur={field.onBlur}          />
+          onBlur={field.onBlur}    
+          >
+            {props.children}
+          </CustomSelect>
         )
       }}
     </Field>
