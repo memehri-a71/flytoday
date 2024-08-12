@@ -34,9 +34,15 @@ export async function GET(request) {
         })
     }
 
+    if (fligthClass) {
+        filteredItems = filteredItems.filter(item => {
+            return item?.originDestinationOptions[0]?.flightSegments[0]?.resBookDesigCode == fligthClass
+        })
+    }
+
     if (airlines) {
-        filteredItems = filteredItems.filter(item => 
-          item?.validatingAirlineCode===airlines
+        filteredItems = filteredItems.filter(item =>
+            item?.validatingAirlineCode === airlines
         )
     }
 
