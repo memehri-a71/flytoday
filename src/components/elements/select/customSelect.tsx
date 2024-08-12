@@ -6,6 +6,7 @@ export const CustomSelect = ({ value, handleChange, options }) => {
     <FormControl fullWidth>
       <Select
         value={value}
+        size="small"
         onChange={(e) => handleChange(e)}
       >
         {options.map(item =>

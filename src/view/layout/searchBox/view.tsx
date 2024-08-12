@@ -7,20 +7,22 @@ import { useFormikContext } from 'formik'
 import { CounterMenu } from '../../fligth/components/menu'
 
 
-export const SearchBoxView = ({ handleChangeDestination ,showMenu, setShowMenu}) => {
+export const SearchBoxView = ({ handleChangeDestination, showMenu, setShowMenu }) => {
     const { values, setFieldValue } = useFormikContext()
- 
+
     return (
-        <div className='sm:grid sm:grid-cols-6 flex flex-col gap-4 py-10'>
+        <div className='sm:grid sm:grid-cols-12 flex flex-col gap-4 bg-white py-10 lg:px-12 md:px-8 px-4'>
             <FormikAutoComplete name='origin' label='مبدا' url='/api/airports' optionLabel='cityFa' />
-            <CustomButton
-                type='button'
-                variant='contained'
-                color='primary'
-                onClick={() => handleChangeDestination({ values, setFieldValue })}
-            >
-                <DirectionIcon className='w-7 h-7' />
-            </CustomButton>
+            <div>
+                <CustomButton
+                    type='button'
+                    variant='contained'
+                    color='primary'
+                    onClick={() => handleChangeDestination({ values, setFieldValue })}
+                >
+                    <DirectionIcon className='w-6 h-6' />
+                </CustomButton>
+            </div>
             <FormikAutoComplete name='destination' label='مقصد' url='/api/airports' optionLabel='cityFa' />
             <FormikDatePicker name='date' />
             <div className='relative'>
@@ -28,7 +30,7 @@ export const SearchBoxView = ({ handleChangeDestination ,showMenu, setShowMenu})
                     <div className='text-black'>تعداد مسافران</div>
                 </CustomButton>
                 {showMenu
-                    ? <CounterMenu name='passengers'/>
+                    ? <CounterMenu name='passengers' />
                     : null}
             </div>
 
