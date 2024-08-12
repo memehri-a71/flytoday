@@ -42,6 +42,7 @@ export const SearchResults = ({ data }:any) => {
                             flightTime={item?.timeInfo}
                             airlineName={item?.airlineInfo?.nameFa}
                             airportsInfo={item?.airportsInfo}
+                            totalPrice={item?.price}
                         />
                     </div>
                 </>

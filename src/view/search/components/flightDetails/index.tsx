@@ -6,8 +6,9 @@ interface Props{
       flightTime:TimeInfoType
       airlineName:string
       airportsInfo:AirportsInfoType
+      totalPrice:string
 }
-export const FlightDetails = ({ flightFeature, flightTime, airlineName, airportsInfo }:Props) => {
+export const FlightDetails = ({ flightFeature, flightTime, airlineName, airportsInfo ,totalPrice}:Props) => {
     const tabItems = [
         { text: 'جزییات پرواز', icon: <MinusIcon /> },
         { text: 'قوانین و شرایط', icon: <MinusIcon />, disabled: true },
@@ -19,6 +20,7 @@ export const FlightDetails = ({ flightFeature, flightTime, airlineName, airports
             flightTime={flightTime}
             airportsInfo={airportsInfo}
             airlineName={airlineName}
+            totalPrice={totalPrice}
         />,
         <div key={2}>قوانین و مقررات</div>,
     ]
