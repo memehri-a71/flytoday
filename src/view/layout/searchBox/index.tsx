@@ -4,16 +4,14 @@ export const SearchBox = () => {
     const { initialValues,
         validationSchema,
         onSubmit,
-        handleChangeDestination,
-        showMenu,
-        setShowMenu } = useSearchBoxViewModel()
+        handleChangeDestination } = useSearchBoxViewModel()
     return (
         <FormikWrapper
             initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={onSubmit}
         >
-            <SearchBoxView handleChangeDestination={handleChangeDestination} showMenu={showMenu} setShowMenu={setShowMenu} />
+            <SearchBoxView handleChangeDestination={handleChangeDestination}  />
         </FormikWrapper>
     )
 }

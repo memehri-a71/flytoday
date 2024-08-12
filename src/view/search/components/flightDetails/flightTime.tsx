@@ -1,6 +1,10 @@
 import { AirportNameAndCode, moment, useFindAirport, usePersionDate, useTime } from "../../imports"
 
-export const FlightTime = ({ airport, time }) => {
+interface Props{ 
+    airport:string
+     time:string
+     }
+export const FlightTime = ({airport , time }:Props) => {
     const datafa = usePersionDate(time)
     const dateEn = moment(time).format('DD MMM')
 

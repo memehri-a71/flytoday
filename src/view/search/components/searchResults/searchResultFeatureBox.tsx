@@ -1,5 +1,5 @@
 
-export const SearchResultFeatureBox = ({ flightFeature }) => {
+export const SearchResultFeatureBox = ({ flightFeature }:any) => {
     const { isCharter, cabinClassNameFa, seatsRemaining, flightNumber, isSystem } = flightFeature
 
     return (

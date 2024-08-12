@@ -1,6 +1,16 @@
 import { CounterButton } from "../imports"
 
-export const CounterBox = (props) => {
+
+interface Props{
+     passengersInfo:{
+            type:string,
+            description:string,
+        }
+        value:any
+        incrementHandler:()=>void
+        decrementHandler:()=>void
+}
+export const CounterBoxView = (props:Props) => {
     const {
         passengersInfo,
         value,

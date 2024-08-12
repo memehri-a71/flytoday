@@ -1,7 +1,14 @@
+import { AirportsInfoType, TimeInfoType } from "@/types/common"
 import { CustomButton, Sort, useFindAirport, usePersionDate, useWeekNameFa } from "../../imports"
 
 
-export const SearchResultHeader = ({ airportsInfo, timeInfo, NumberOfّlights }) => {
+interface Props{ 
+    airportsInfo:AirportsInfoType
+     timeInfo:TimeInfoType
+     NumberOfّlights:number
+     }
+
+export const SearchResultHeader = ({ airportsInfo, timeInfo, NumberOfّlights }:Props) => {
     const arrivalAirport = useFindAirport(airportsInfo?.arrivalAirportLocationCode)?.countryFa
     const departureAirport = useFindAirport(airportsInfo?.departureAirportLocationCode)?.countryFa
     const day = useWeekNameFa(timeInfo?.departureDateTime)

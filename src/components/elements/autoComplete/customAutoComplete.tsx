@@ -1,4 +1,4 @@
-import { axiosGet } from "@/configs/httpService/httpService";
+
 import { CustomAutoCompleteProps } from "@/types/autoComplete";
 import { Autocomplete, CircularProgress, TextField } from "@mui/material";
 import { useState } from "react";
@@ -25,10 +25,9 @@ export const CustomAutoComplete = (props:CustomAutoCompleteProps) => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await axiosGet({
-        url,
-      });
-      setOptions(response);
+      const response = await fetch(url);
+       const res = await response.json();
+      setOptions(res);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {

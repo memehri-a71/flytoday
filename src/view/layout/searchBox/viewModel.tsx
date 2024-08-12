@@ -1,6 +1,18 @@
 'use client'
 import { moment, useRouter, useState, yup } from "../imports";
 
+interface Passengers{
+       id: 'adult'|'child'|'baby'
+            type: 'بزرگسال'|'کودک'|'نوزاد'
+            description: string
+            count: number
+}
+interface InitialValues{
+    origin: Record<string,any>
+    destination: Record<string,any>
+    date: Date
+    passengers:Passengers[] 
+}
 export const useSearchBoxViewModel = () => {
     const [showMenu, setShowMenu] = useState(false)
     const router = useRouter()
@@ -37,12 +49,12 @@ export const useSearchBoxViewModel = () => {
             .required("این فیلد الزامی است."),
     });
 
-    const handleChangeDestination = ({ values, setFieldValue }) => {
+    const handleChangeDestination = ({ values, setFieldValue }:{ values:InitialValues, setFieldValue:any }) => {
         setFieldValue('origin', values?.destination)
         setFieldValue('destination', values?.origin)
     }
 
-    const onSubmit = (values) => {
+    const onSubmit = (values:InitialValues) => {
         const departureDate = moment(values.date).format('YYYY-MM-DD')
         const url = `/flight/search?departure=${values?.origin?.iata}&arrival=${values?.destination?.iata}&departureDate=${departureDate}`
         router.push(url);

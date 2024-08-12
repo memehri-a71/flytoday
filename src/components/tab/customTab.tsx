@@ -8,8 +8,9 @@ import Tabs from '@mui/material/Tabs'
 
 import { a11yProps, sxTab, sxTabs } from './tabStyles'
 import { CustomTabPanel } from './customTabPanel'
+import { TabPropsType } from '@/types/tab'
 
-export const CustomTab = (props) => {
+export const CustomTab = (props:TabPropsType) => {
   const {
     noBorderDivider,
     tabItems,

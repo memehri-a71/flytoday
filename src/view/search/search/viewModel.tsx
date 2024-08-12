@@ -7,8 +7,9 @@ import {
     useFindAirline
 } from "../imports";
 
+
 export const useSearchViewModel = () => {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState<any[]>([]);
     const searchParams = useSearchParams();
 
     const departure = searchParams.get('departure');
@@ -17,16 +18,16 @@ export const useSearchViewModel = () => {
     const sortField = searchParams.get('sortField')
     const sortOrder = searchParams.get('sortOrder')
 
-    const fetchItems = async (departure, arrival, departureDate) => {
+    const fetchItems = async () => {
         const response = await fetch(`/api/search?${searchParams}`);
         const data = await response.json();
         return data;
     };
 
-    const sortData = (data, sortField, sortOrder = 'asc') => {
-        const t = data.sort((p1, p2) => {
-            if (p1[sortField] < p2[sortField]) return 1;
-            if (p1[sortField] > p2[sortField]) return -1;
+    const sortData = (data:any[], sortField:string, sortOrder = 'asc') => {
+        const t = data.sort((a, b) => {
+            if (a[sortField] < b[sortField]) return 1;
+            if (a[sortField] > b[sortField]) return -1;
             return 0;
         });
         return sortOrder == 'asc' ? t.reverse() : t
@@ -34,8 +35,8 @@ export const useSearchViewModel = () => {
 
     useEffect(() => {
         const getItems = async () => {
-            const data = await fetchItems(departure, arrival, departureDate);
-            const flightInfo = data?.map(item => {
+            const data = await fetchItems();
+            const flightInfo = data?.map((item:any) => {
                 return {
                     originDestinationOptions: item.originDestinationOptions[0]?.flightSegments[0], //[]
                     airItineraryPricingInfo: item?.airItineraryPricingInfo?.itinTotalFare, //{}
@@ -43,7 +44,7 @@ export const useSearchViewModel = () => {
                     isSystem: item?.isSystem
                 }
             })
-            const dataFlight = flightInfo?.map(({ originDestinationOptions, airItineraryPricingInfo, airlineCode, isSystem }) => {
+            const dataFlight = flightInfo?.map(({ originDestinationOptions, airItineraryPricingInfo, airlineCode, isSystem }:any) => {
                 const feature = {
                     isCharter: originDestinationOptions?.isCharter,
                     isSystem: isSystem,
@@ -56,6 +57,7 @@ export const useSearchViewModel = () => {
                     isReturn: originDestinationOptions?.isReturn,
                 }
                 const timeInfo = {
+                    // eslint-disable-next-line react-hooks/rules-of-hooks
                     journeyDurationPerMinute: useConvertTimeToPersion(originDestinationOptions?.journeyDurationPerMinute),
                     arrivalDateTime: originDestinationOptions?.arrivalDateTime,
                     departureDateTime: originDestinationOptions?.departureDateTime,
@@ -64,6 +66,7 @@ export const useSearchViewModel = () => {
                     arrivalAirportLocationCode: originDestinationOptions?.arrivalAirportLocationCode,
                     departureAirportLocationCode: originDestinationOptions?.departureAirportLocationCode,
                 }
+                // eslint-disable-next-line react-hooks/rules-of-hooks
                 const airlineInfo = useFindAirline(airlineCode)
                 const price = airItineraryPricingInfo?.totalFare
                 const time = originDestinationOptions?.departureDateTime
@@ -77,7 +80,7 @@ export const useSearchViewModel = () => {
             setItems(dataFlight);
         };
         getItems();
-    }, [searchParams]);
+    }, [arrival, departure, departureDate, searchParams, sortField, sortOrder]);
 
-    return { items, fetchItems }
+    return { items }
 }

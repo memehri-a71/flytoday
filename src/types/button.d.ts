@@ -6,5 +6,5 @@ export interface CustomButtonType {
     isLoading?: boolean
     isFullWidth?: boolean
     disabled?: boolean
-    onClick: () => void
+    onClick?: () => void
 }

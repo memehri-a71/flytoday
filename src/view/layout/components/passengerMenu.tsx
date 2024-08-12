@@ -1,11 +1,12 @@
 import { CounterBox, FormikSelect, MenuItem, useFormikContext } from "../imports"
 
-export const PassengerMenu = ({ name }) => {
-    const { values, setFieldValue } = useFormikContext()
 
+export const PassengerMenu = ({ name }:{name:string}) => {
+    const { values, setFieldValue }:any= useFormikContext()
+ 
     return (
-        <FormikSelect>
-            {values[name].map((item, index) => (
+        <FormikSelect name={name}>
+            {values[name].map((item:any, index:number) => (
                 <MenuItem key={item.type} value={item.type}>
                     <CounterBox
                         key={index}

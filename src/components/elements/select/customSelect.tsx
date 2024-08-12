@@ -1,15 +1,16 @@
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { CustomSelectType } from "@/types/select";
+import { FormControl,  MenuItem, Select } from "@mui/material";
 
-export const CustomSelect = ({ value, handleChange, options, children }) => {
-
+export const CustomSelect = (props:CustomSelectType) => {
+const { value, handleChange, options, children }=props
   return (
     <FormControl fullWidth>
       <Select
         value={value}
         size="small"
-        onChange={(e) => handleChange(e)}
+        onChange={handleChange}
       >
-        {options ? options.map(item =>
+        {options ? options.map((item:Record<string,any>) =>
           <MenuItem
             key={item.value}
             value={JSON.stringify(item)}

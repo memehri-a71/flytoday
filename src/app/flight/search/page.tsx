@@ -1,14 +1,12 @@
 
+import { Suspense } from 'react';
+import { Search } from '../../../view/search/index';
 
-import { Search } from '@/view/search';
 
-const SearchPage = () => {
+const SearchPage  = async () => {
+  return( <Suspense>
+            <Search />
+          </Suspense>)
+}
 
-  return (
-    <div>
-      <Search />
-    </div>
-  );
-};
-
-export default SearchPage;
+export default SearchPage

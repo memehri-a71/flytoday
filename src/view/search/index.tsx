@@ -1,5 +1,5 @@
-'use client'
 
+'use client'
 import { SearchBox } from '../layout/searchBox'
 import { SearchView } from './search/view'
 import { useSearchViewModel } from './search/viewModel'

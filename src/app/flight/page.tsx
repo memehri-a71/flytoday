@@ -1,7 +1,7 @@
-import { Flight } from "@/view/fligth"
 
-const FligthPage= () => {
- 
+import { Flight } from "../../view/fligth/index"
+
+const FligthPage= async() => {
   return <Flight />
 }
 

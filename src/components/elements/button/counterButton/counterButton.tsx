@@ -1,11 +1,16 @@
 import { MinusIcon, PlusIcon } from '@/utile/icons'
 import React from 'react'
 
-export const CounterButton = ({
+interface Props{
+    value:any
+  incrementHandler:()=>void
+  decrementHandler:()=>void
+}
+export const CounterButtonView = ({
   value,
   incrementHandler,
   decrementHandler,
-}) => {
+}:Props) => {
   return (
     <div className="flex justify-between gap-4 bg-tint-100 rounded-full py-3">
       <button

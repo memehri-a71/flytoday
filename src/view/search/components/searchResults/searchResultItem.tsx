@@ -1,6 +1,19 @@
 import { SearchResultFeatureBox, SearchResultPricetInfo, SearchResultTimeBox } from "../../imports"
+import { AirportsInfoType, FeatureType, TimeInfoType } from "@/types/common"
 
-export const SearchResultItem = (props) => {
+interface Props{
+     id:string |number
+      flightTime:TimeInfoType
+      flightFeature:FeatureType
+      totalPrice:number
+      airlineName:string
+      airportsInfo:AirportsInfoType
+      setShowMoreDetail:(value:Record<string,boolean>)=>void
+      showMoreDetail:Record<string,boolean>
+    }
+
+
+export const SearchResultItem = (props:Props) => {
     const { id, flightTime, flightFeature, totalPrice, airlineName, airportsInfo, setShowMoreDetail, showMoreDetail } = props
     return (
         <div>

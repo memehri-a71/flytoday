@@ -1,6 +1,9 @@
 import { CustomButton, DirectionIcon, FormikAutoComplete, FormikDatePicker, PassengerMenu, useFormikContext } from "../imports"
 
-export const SearchBoxView = ({ handleChangeDestination }) => {
+interface Props{
+    handleChangeDestination:({ values, setFieldValue }:any)=>void
+}
+export const SearchBoxView = ({ handleChangeDestination }:Props) => {
     const { values, setFieldValue } = useFormikContext()
 
     return (

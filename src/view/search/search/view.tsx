@@ -1,6 +1,16 @@
 import { FilterSidebar, SearchResults } from "../imports"
+import { AirportsInfoType, FeatureType } from '@/types/common'
 
-export const SearchView = ({ searchResultList }) => {
+
+interface Prop{
+feature:FeatureType
+airportsInfo:AirportsInfoType
+airlineInfo:string
+price:number
+time:string
+}
+
+export const SearchView = ({ searchResultList }:any) => {
     return (
         <div className='lg:px-12 md:px-8 px-4'>
 

@@ -3,24 +3,21 @@
 import { useEffect } from 'react'
 import { default as moment } from 'jalali-moment'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
-import { faIR } from '@mui/x-date-pickers/locales'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { HelperText } from '../helperText'
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import 'moment/locale/de';
+import { DatepickerPropsInterface } from '@/types/datePicker'
 
-export const CustomDatePicker = (props) => {
+
+export const CustomDatePicker = (props:DatepickerPropsInterface) => {
   const {
     label,
     defaultValue = undefined,
     className,
-    classnametitle,
     onClose,
     error = false,
-    // value,
     helperText,
-    title,
     name,
     onChange,
     setFieldValue,

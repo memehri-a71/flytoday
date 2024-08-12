@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Flytoday Application
 
-## Getting Started
+This project is a flight search application tailored for an airline company. Built using Next.js 14, Tailwind CSS, Next.js Route API, this application allows users to search for flights, view results, and filter or sort based on different parameters
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Flight Search**: Search for flights based on departure and arrival airports, dates, and other parameters.
+- **Result Display**: View search results in a clean and user-friendly format.
+- **Filtering**: Filter flight results based on specific parameters like price, duration, airline, etc.
+- **Sorting**: Sort flight results by price, duration, departure time, etc.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Next**: A React framework for server-side rendering and generating static websites.
+- **TypeScript**: Provides static typing to JavaScript.
+- **Next.js Route API**: For building API endpoints within the Next.js application.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI design.
+- **Material-UI (MUI)**: A popular React UI framework for building sleek and responsive user interfaces.
+- **Formik**: Form management library to handle form state and validation.
 
-## Learn More
+## Setup and Installation
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ensure you have the following installed:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Node.js (version 14 or later)
+- npm or yarn
 
-## Deploy on Vercel
+### Installation Steps
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone the Repository:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   git clone https://github.com/memehri-a71/flytoday
+   cd your-project-name
+   npm install
+   # or
+   yarn install
+
+2. **Run the Development Server:**
+ 
+   ```bash
+   Copy code
+   npm run dev
+   # or
+   yarn dev 
+
