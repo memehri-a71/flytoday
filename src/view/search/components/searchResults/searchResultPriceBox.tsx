@@ -1,5 +1,4 @@
-import { CustomButton } from "@/components/elements/button/customButton"
-import { useNumberFormat } from "@/hooks/useNumberFormat"
+import { CustomButton, useNumberFormat } from "../../imports"
 
 export const SearchResultPricetInfo = ({ text, isFullWidth, totalPrice, onClick }) => {
     return <div className='flex sm:flex-col sm:items-center justify-between py-4 sm:border-r sm:border-gray-300 sm:gap-2 sm:col-span-1 sm:py-4 sm:pr-4' >

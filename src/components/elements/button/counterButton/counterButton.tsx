@@ -1,8 +1,7 @@
 import { MinusIcon, PlusIcon } from '@/utile/icons'
 import React from 'react'
 
-
-export const CounterButtonView = ({
+export const CounterButton = ({
   value,
   incrementHandler,
   decrementHandler,

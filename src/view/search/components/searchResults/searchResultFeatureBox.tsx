@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const SearchResultFeatureBox = ({ flightFeature }) => {
     const { isCharter, cabinClassNameFa, seatsRemaining, flightNumber, isSystem } = flightFeature

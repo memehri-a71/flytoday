@@ -1,8 +1,4 @@
-
-import { FlightDetailHeader } from './flightDetailHeader'
-import { FlightTime } from './flightTime';
-import { FlightDetailFeature } from './flightDetailFeature';
-import { useFindAirport } from '@/hooks/useFindAirport';
+import { FlightDetailFeature, FlightDetailHeader, FlightTime, useFindAirport } from "../../imports"
 
 export const FlightDetailTab = ({ flightFeature, flightTime, airlineName, airportsInfo }) => {
 

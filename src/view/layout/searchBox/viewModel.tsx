@@ -1,8 +1,5 @@
-
-import moment from "jalali-moment";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import * as yup from "yup";
+'use client'
+import { moment, useRouter, useState, yup } from "../imports";
 
 export const useSearchBoxViewModel = () => {
     const [showMenu, setShowMenu] = useState(false)

@@ -1,9 +1,4 @@
-import { FormikAutoComplete } from '@/components/elements/autoComplete/formikAutoComplete'
-import { CustomButton } from '@/components/elements/button/customButton'
-import { FormikDatePicker } from '@/components/elements/datePicker/formikDatePicker'
-import { DirectionIcon } from '@/utile/icons'
-import { PassengerMenu } from '@/view/fligth/components/menu/passengerMenu'
-import { useFormikContext } from 'formik'
+import { CustomButton, DirectionIcon, FormikAutoComplete, FormikDatePicker, PassengerMenu, useFormikContext } from "../imports"
 
 export const SearchBoxView = ({ handleChangeDestination }) => {
     const { values, setFieldValue } = useFormikContext()

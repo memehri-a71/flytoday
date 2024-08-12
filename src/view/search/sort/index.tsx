@@ -1,6 +1,4 @@
-
-import { SortVeiw } from './veiw';
-import { useSortVeiwModel } from './veiwModel';
+import { SortVeiw, useSortVeiwModel } from "../imports"
 
 export const Sort = () => {
   const { optionSort, selectedValue, handleChange } = useSortVeiwModel()

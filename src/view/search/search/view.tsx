@@ -1,13 +1,9 @@
-import React from 'react'
-import { SearchBox } from '../../layout/searchBox'
-import { SearchResults } from '../components/searchResults'
-import { FilterSidebar } from '@/view/search/filterSidebar'
-
+import { FilterSidebar, SearchResults } from "../imports"
 
 export const SearchView = ({ searchResultList }) => {
     return (
         <div className='lg:px-12 md:px-8 px-4'>
-           
+
             <div className='sm:grid sm:grid-cols-12 gap-x-6 py-5'>
                 <div className='lg:col-span-3 max-lg:hidden'>
                     <FilterSidebar />

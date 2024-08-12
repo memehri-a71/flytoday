@@ -1,4 +1,4 @@
-import { CustomSelect } from '@/components/elements/select/customSelect'
+import { CustomSelect } from "../imports"
 
 export const SortVeiw = ({optionSort,selectedValue,handleChange}) => {
   return (

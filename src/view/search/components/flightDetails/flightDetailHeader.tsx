@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const FlightDetailHeader = ({origin,destination}) => {
   return (

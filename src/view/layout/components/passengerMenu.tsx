@@ -1,8 +1,4 @@
-
-import { CounterBoxView } from '../counterBox/view'
-import { MenuItem } from '@mui/material'
-import { useFormikContext } from 'formik'
-import { FormikSelect } from '@/components/elements/select/formikSelect'
+import { CounterBox, FormikSelect, MenuItem, useFormikContext } from "../imports"
 
 export const PassengerMenu = ({ name }) => {
     const { values, setFieldValue } = useFormikContext()
@@ -11,7 +7,7 @@ export const PassengerMenu = ({ name }) => {
         <FormikSelect>
             {values[name].map((item, index) => (
                 <MenuItem key={item.type} value={item.type}>
-                    <CounterBoxView
+                    <CounterBox
                         key={index}
                         passengersInfo={item}
                         value={values[name][index]?.count}

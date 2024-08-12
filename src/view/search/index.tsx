@@ -8,10 +8,9 @@ export const Search = () => {
   const { items } = useSearchViewModel()
   return (
     <>
-    <div className='w-full'>
-
-      <SearchBox />
-    </div>
+      <div className='w-full'>
+        <SearchBox />
+      </div>
       <SearchView searchResultList={items} />
     </>
   )

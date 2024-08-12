@@ -1,8 +1,6 @@
-import { CounterButton } from '@/components/elements/button/counterButton'
-import { CounterButtonView } from '@/components/elements/button/counterButton/view'
-import { useState } from 'react'
+import { CounterButton } from "../imports"
 
-export const CounterBoxView = (props) => {
+export const CounterBox = (props) => {
     const {
         passengersInfo,
         value,
@@ -16,7 +14,7 @@ export const CounterBoxView = (props) => {
                 <p>{passengersInfo.type}</p>
                 <p className='text-xs'>{passengersInfo.description}</p>
             </div>
-            <CounterButtonView
+            <CounterButton
                 value={value}
                 incrementHandler={incrementHandler}
                 decrementHandler={decrementHandler}

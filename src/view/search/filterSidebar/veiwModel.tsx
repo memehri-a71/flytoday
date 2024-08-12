@@ -1,5 +1,4 @@
-import { useRouter, useSearchParams } from 'next/navigation';
-import jsonData from '../../../utile/data/flight-data.json'
+import { jsonData, useRouter, useSearchParams } from "../imports";
 
 export const useFilterSidebarVeiwModel = () => {
     const router = useRouter()

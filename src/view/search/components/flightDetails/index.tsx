@@ -1,7 +1,4 @@
-
-import { MinusIcon } from '@/utile/icons'
-import { CustomTab } from '@/components/tab/customTab'
-import { FlightDetailTab } from './flightDetailTab'
+import { CustomTab, FlightDetailTab, MinusIcon } from "../../imports"
 
 export const FlightDetails = ({ flightFeature, flightTime, airlineName, airportsInfo }) => {
     const tabItems = [

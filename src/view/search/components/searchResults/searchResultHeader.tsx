@@ -1,9 +1,5 @@
+import { CustomButton, Sort, useFindAirport, usePersionDate, useWeekNameFa } from "../../imports"
 
-import { CustomButton } from '@/components/elements/button/customButton'
-import { useFindAirport } from '@/hooks/useFindAirport'
-import { usePersionDate } from '@/hooks/usePersionDate'
-import { useWeekNameFa } from '@/hooks/useWeekNameFa'
-import { Sort } from '@/view/search/sort'
 
 export const SearchResultHeader = ({ airportsInfo, timeInfo, NumberOfّlights }) => {
     const arrivalAirport = useFindAirport(airportsInfo?.arrivalAirportLocationCode)?.countryFa

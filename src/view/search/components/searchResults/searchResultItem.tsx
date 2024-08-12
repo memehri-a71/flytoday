@@ -1,7 +1,4 @@
-import { SearchResultFeatureBox } from "./searchResultFeatureBox"
-import { SearchResultPricetInfo } from "./searchResultPriceBox"
-import { SearchResultTimeBox } from "./searchResultTimeBox"
-
+import { SearchResultFeatureBox, SearchResultPricetInfo, SearchResultTimeBox } from "../../imports"
 
 export const SearchResultItem = (props) => {
     const { id, flightTime, flightFeature, totalPrice, airlineName, airportsInfo, setShowMoreDetail, showMoreDetail } = props

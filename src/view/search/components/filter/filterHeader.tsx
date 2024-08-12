@@ -1,6 +1,4 @@
-import { CustomButton } from '@/components/elements/button/customButton'
-import { useRouter, useSearchParams } from 'next/navigation';
-import { useFilterSidebarVeiwModel } from '../../filterSidebar/veiwModel';
+import { CustomButton, useFilterSidebarVeiwModel, useRouter, useSearchParams } from "../../imports";
 
 export const FilterHeader = () => {
     const searchParams = useSearchParams();

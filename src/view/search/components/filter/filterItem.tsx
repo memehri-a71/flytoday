@@ -1,7 +1,4 @@
-import { CustomRadio } from '@/components/elements/radio/customRadio'
-import { ArrowTopIcon } from '../../../../utile/icons/icon'
-import { useState } from 'react'
-
+import { ArrowTopIcon, CustomRadio, useState } from "../../imports"
 
 export const FilterItem = ({ options, title,handleChange }) => {
     const [showFilterBox, setShowFilterBox] = useState(true)
