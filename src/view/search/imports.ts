@@ -32,6 +32,8 @@ import { SearchResultFeatureBox } from "./components/searchResults/searchResultF
 import { SearchResultPricetInfo } from "./components/searchResults/searchResultPriceBox"
 import { SearchResultTimeBox } from "./components/searchResults/searchResultTimeBox"
 import { useNumberFormat } from "@/hooks/useNumberFormat"
+import { SearchView } from './search/view'
+import { useSearchViewModel } from './search/viewModel'
 
 export {
     jsonData,
@@ -41,6 +43,8 @@ export {
     useWeekNameFa,
     useConvertTimeToPersion,
     useFindAirline,
+    SearchView,
+    useSearchViewModel,
     useState,
     CustomButton,
     CustomSelect,
