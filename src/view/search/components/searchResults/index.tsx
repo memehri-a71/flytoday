@@ -1,15 +1,9 @@
 
 'use client'
-import { FlightDetails } from '../flightDetails'
-import { NoData } from './noData'
-import { SearchResultHeader } from './searchResultHeader'
-import { SearchResultItem } from './searchResultItem'
-import { useState } from 'react'
+import { FlightDetails, SearchResultHeader, SearchResultItem, useState } from "../../imports"
 
-
-
-export const SearchResults = ({ data }:any) => {
-    const [showMoreDetail, setShowMoreDetail] = useState<Record<string,boolean>>({})
+export const SearchResults = ({ data }: any) => {
+    const [showMoreDetail, setShowMoreDetail] = useState<Record<string, boolean>>({})
 
     return (
         <div className='flex flex-col gap-5'>
@@ -18,10 +12,7 @@ export const SearchResults = ({ data }:any) => {
                 timeInfo={data[0]?.timeInfo}
                 NumberOfّlights={data?.length}
             />
-            
-            {data?.length ?
-            
-            data?.map((item:any, index:number) =>
+            {data?.map((item: any, index: number) =>
                 <>
                     <SearchResultItem
                         key={index}
@@ -49,9 +40,7 @@ export const SearchResults = ({ data }:any) => {
                         />
                     </div>
                 </>
-            )
-        :<NoData/>
-        }
+            )}
         </div>
     )
 }

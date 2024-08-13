@@ -34,7 +34,11 @@ import { SearchResultTimeBox } from "./components/searchResults/searchResultTime
 import { useNumberFormat } from "@/hooks/useNumberFormat"
 import { SearchView } from './search/view'
 import { useSearchViewModel } from './search/viewModel'
-import type { AirportsInfoType, FeatureType } from '@/types/common'
+import type { AirportsInfoType, FeatureType, TimeInfoType } from '@/types/common'
+import { FlightDetails } from './components/flightDetails'
+import { SearchResultHeader } from './components/searchResults/searchResultHeader'
+import { SearchResultItem } from './components/searchResults/searchResultItem'
+import { NoData } from "./components/searchResults/noData"
 
 export {
     jsonData,
@@ -75,5 +79,9 @@ export {
     SearchResultPricetInfo,
     SearchResultTimeBox,
     useNumberFormat,
+    FlightDetails,
+    SearchResultHeader,
+    SearchResultItem,
+    NoData
 }
-export type { AirportsInfoType, FeatureType }
+export type { AirportsInfoType, FeatureType, TimeInfoType }
