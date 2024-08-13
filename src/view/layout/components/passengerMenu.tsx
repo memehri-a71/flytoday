@@ -2,7 +2,7 @@ import { CounterBox, FormikSelect, MenuItem, useFormikContext } from "../imports
 
 export const PassengerMenu = ({ name }: { name: string }) => {
     const { values, setFieldValue }: any = useFormikContext()
-    
+
     return (
         <FormikSelect name={name}>
             {values[name]?.map((item: any, index: number) => (

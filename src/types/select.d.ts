@@ -7,6 +7,7 @@ export interface Common{
   onBlur?: () => void
   error:boolean
   value:any
+  placeholder:string
 }
 
 export interface CustomSelectType extends Partial<Common>{

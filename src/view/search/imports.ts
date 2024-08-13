@@ -34,6 +34,7 @@ import { SearchResultTimeBox } from "./components/searchResults/searchResultTime
 import { useNumberFormat } from "@/hooks/useNumberFormat"
 import { SearchView } from './search/view'
 import { useSearchViewModel } from './search/viewModel'
+import type { AirportsInfoType, FeatureType } from '@/types/common'
 
 export {
     jsonData,
@@ -73,6 +74,6 @@ export {
     SearchResultFeatureBox,
     SearchResultPricetInfo,
     SearchResultTimeBox,
-    useNumberFormat
-
+    useNumberFormat,
 }
+export type { AirportsInfoType, FeatureType }

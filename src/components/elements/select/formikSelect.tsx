@@ -11,6 +11,7 @@ export const FormikSelect= (props:FormikSelectType) => {
       {({ form, field }: FieldAttributes<any>) => {
         return (
           <CustomSelect
+          {...props}
           setFieldValue={form.setFieldValue}
           value={field.value}
           error={form.touched[field.name]

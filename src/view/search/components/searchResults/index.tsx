@@ -1,6 +1,7 @@
 
 'use client'
 import { FlightDetails } from '../flightDetails'
+import { NoData } from './noData'
 import { SearchResultHeader } from './searchResultHeader'
 import { SearchResultItem } from './searchResultItem'
 import { useState } from 'react'
@@ -18,7 +19,9 @@ export const SearchResults = ({ data }:any) => {
                 NumberOfّlights={data?.length}
             />
             
-            {data?.map((item:any, index:number) =>
+            {data?.length ?
+            
+            data?.map((item:any, index:number) =>
                 <>
                     <SearchResultItem
                         key={index}
@@ -46,7 +49,9 @@ export const SearchResults = ({ data }:any) => {
                         />
                     </div>
                 </>
-            )}
+            )
+        :<NoData/>
+        }
         </div>
     )
 }

@@ -2,7 +2,7 @@ import { CustomSelectType } from "@/types/select";
 import { FormControl,  MenuItem, Select } from "@mui/material";
 
 export const CustomSelect = (props:CustomSelectType) => {
-const { value, handleChange, options, children }=props
+const { value, handleChange, options, children ,placeholder}=props
 
   return (
     <FormControl fullWidth>
@@ -10,6 +10,7 @@ const { value, handleChange, options, children }=props
         value={value}
         size="small"
         onChange={handleChange}
+        placeholder={placeholder}
       >
         {options ? options.map((item:Record<string,any>) =>
           <MenuItem
