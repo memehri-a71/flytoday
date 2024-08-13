@@ -17,7 +17,7 @@ export const FlightPassengersInfo = ({ totalPrice }: Props) => {
 
     return (
         <div className='md:grid md:grid-cols-4 flex flex-col max-md:border max-md:border-gray-300 text-sm md:pt-8 mt-4'>
-            {passengers?.map(item => <div className='flex md:justify-center justify-between items-center md:gap-4 gap-2 md:border md:border-gray-300 p-3'>
+            {passengers?.map(item => <div key={item?.name} className='flex md:justify-center justify-between items-center md:gap-4 gap-2 md:border md:border-gray-300 p-3'>
                 <div>
                     <span>{item?.value}</span> *  <span>{item?.label}</span>
                 </div>

@@ -6,7 +6,7 @@ interface Props{
       flightTime:TimeInfoType
       airlineName:string
       airportsInfo:AirportsInfoType
-      totalPrice:string
+      totalPrice:number
 }
 export const FlightDetails = ({ flightFeature, flightTime, airlineName, airportsInfo ,totalPrice}:Props) => {
     const tabItems = [

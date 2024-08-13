@@ -6,7 +6,7 @@ interface Props{
      flightTime:Record<string,any>
      airlineName:string
      airportsInfo:Record<string,any>
-     totalPrice:string
+     totalPrice:number
      }
 export const FlightDetailTab = ({ flightFeature, flightTime, airlineName, airportsInfo,totalPrice }:Props) => {
 
