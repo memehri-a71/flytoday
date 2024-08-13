@@ -17,13 +17,13 @@ export const SearchResultHeader = ({ airportsInfo, timeInfo, NumberOfّlights }:
     return (
         <div className='flex max-sm:flex-col sm:justify-between sm:items-end'>
             <div className='sm:hidden flex gap-2 w-full py-5'>
-                <CustomButton type='button' variant='contained' isFullWidth >
-                    <div className='flex items-center'>
+                <CustomButton type='button' variant='contained' color="info" isFullWidth >
+                    <div className='flex items-center text-greyish-brown'>
                         <p>فیلتر کردن</p>
                     </div>
                 </CustomButton>
-                <CustomButton type='button' variant='contained' isFullWidth>
-                    <div className='flex items-center'>
+                <CustomButton type='button' variant='contained' color="info" isFullWidth>
+                    <div className='flex items-center text-greyish-brown'>
                         <p>مرتب‌سازی</p>
                     </div>
                 </CustomButton>

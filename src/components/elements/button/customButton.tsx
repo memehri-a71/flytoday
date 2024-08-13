@@ -10,6 +10,7 @@ export const CustomButton = (props: CustomButtonType) => {
     color = "primary",
     isLoading, isFullWidth,
     disabled,
+    width
   } = props;
   return (
     <Button
@@ -22,7 +23,9 @@ export const CustomButton = (props: CustomButtonType) => {
       disabled={disabled}
       sx={{
         height:'36px !important',
-        // maxWidth:'20px'
+        maxWidth:'auto !important',
+        minWidth:'auto !important',
+        width:{width}
       }}
     >
       <div className="flex gap-2 items-center text-white">
