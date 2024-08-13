@@ -1,5 +1,4 @@
-import { useRouter, useSearchParams } from 'next/navigation';
-import jsonData from '../../../utile/data/flight-data.json'
+import { jsonData, useRouter, useSearchParams } from "../imports";
 
  interface ReturnFunc{ 
     filterList:Record<string,any>

@@ -1,7 +1,6 @@
+import { SearchResultFeatureBox, SearchResultPricetInfo, SearchResultTimeBox } from "../../imports"
 import { AirportsInfoType, FeatureType, TimeInfoType } from "@/types/common"
-import { SearchResultFeatureBox } from "./searchResultFeatureBox"
-import { SearchResultPricetInfo } from "./searchResultPriceBox"
-import { SearchResultTimeBox } from "./searchResultTimeBox"
+
 interface Props{
      id:string |number
       flightTime:TimeInfoType

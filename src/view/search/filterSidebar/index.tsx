@@ -1,6 +1,4 @@
-import React from 'react'
-import { FilterSidebarVeiw } from './veiw'
-import { useFilterSidebarVeiwModel } from './veiwModel'
+import { FilterSidebarVeiw, useFilterSidebarVeiwModel } from "../imports"
 
 export const FilterSidebar = () => {
   const { filterList, handleChange } = useFilterSidebarVeiwModel()

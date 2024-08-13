@@ -11,6 +11,7 @@ export const FormikSelect= (props:FormikSelectType) => {
       {({ form, field }: FieldAttributes<any>) => {
         return (
           <CustomSelect
+          {...props}
           setFieldValue={form.setFieldValue}
           value={field.value}
           error={form.touched[field.name]
@@ -21,7 +22,10 @@ export const FormikSelect= (props:FormikSelectType) => {
             form.setFieldValue(props.name, value)
             props.onChangeHandler && props?.onChangeHandler?.(value)
           } }
-          onBlur={field.onBlur}          />
+          onBlur={field.onBlur}    
+          >
+            {props.children}
+          </CustomSelect>
         )
       }}
     </Field>

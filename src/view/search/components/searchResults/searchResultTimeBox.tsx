@@ -1,6 +1,4 @@
-import { AirportNameAndCode } from "@/components/aitportNameAndCode"
-import { useFindAirport } from "@/hooks/useFindAirport"
-import { useTime } from "@/hooks/useTime"
+import { AirportNameAndCode, useFindAirport, useTime } from "../../imports"
 import { AirportsInfoType,TimeInfoType } from "@/types/common"
 
 interface Props{ 

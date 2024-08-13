@@ -1,5 +1,5 @@
-import { FilterHeader } from '@/view/search/components/filter/filterHeader'
-import { FilterItem } from '@/view/search/components/filter/filterItem'
+import { FilterHeader, FilterItem } from "../imports"
+
  interface Props{ 
     filterList:Record<string,any>
     handleChange: (e:any,title:string)=>void

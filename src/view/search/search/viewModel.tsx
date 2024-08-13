@@ -1,8 +1,12 @@
-'use client'
-import { useConvertTimeToPersion } from '@/hooks/useConvertTimeToPersion';
-import { useFindAirline } from '@/hooks/useFindAirline';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react'
+
+import {
+    useState,
+    useEffect,
+    useSearchParams,
+    useConvertTimeToPersion,
+    useFindAirline
+} from "../imports";
+
 
 export const useSearchViewModel = () => {
     const [items, setItems] = useState<any[]>([]);

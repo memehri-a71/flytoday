@@ -1,5 +1,4 @@
-import { CustomButton } from "@/components/elements/button/customButton"
-import { useNumberFormat } from "@/hooks/useNumberFormat"
+import { CustomButton, useNumberFormat } from "../../imports"
 
 interface Props{
      text:String 

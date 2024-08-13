@@ -1,6 +1,4 @@
-import { CustomRadio } from '@/components/elements/radio/customRadio'
-import { ArrowTopIcon } from '../../../../utile/icons/icon'
-import { useState } from 'react'
+import { ArrowTopIcon, CustomRadio, useState } from "../../imports"
 
 interface Props{
     options:Record<string,any>[]

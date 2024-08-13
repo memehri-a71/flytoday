@@ -1,4 +1,4 @@
-import { CustomSelect } from '@/components/elements/select/customSelect'
+import { CustomSelect } from "../imports"
 
 interface Props{
     optionSort:Record<string,any>[]
